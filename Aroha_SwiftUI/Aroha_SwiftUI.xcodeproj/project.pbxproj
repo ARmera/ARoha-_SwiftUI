@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28D58F8124CBEF8B0089C134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8024CBEF8B0089C134 /* AppDelegate.swift */; };
+		28D58F8324CBEF8B0089C134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */; };
+		28D58F8524CBEF8B0089C134 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8424CBEF8B0089C134 /* ContentView.swift */; };
+		28D58F8724CBEF8D0089C134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D58F8624CBEF8D0089C134 /* Assets.xcassets */; };
+		28D58F8A24CBEF8D0089C134 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D58F8924CBEF8D0089C134 /* Preview Assets.xcassets */; };
+		28D58F8D24CBEF8D0089C134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D58F8B24CBEF8D0089C134 /* LaunchScreen.storyboard */; };
+		28D58F9824CBEF8D0089C134 /* Aroha_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F9724CBEF8D0089C134 /* Aroha_SwiftUITests.swift */; };
+		28D58FA324CBEF8D0089C134 /* Aroha_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FA224CBEF8D0089C134 /* Aroha_SwiftUIUITests.swift */; };
+		28D58FB124CBF2B50089C134 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FB024CBF2B50089C134 /* LoginView.swift */; };
+		28D58FB724CC02DF0089C134 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FB624CC02DF0089C134 /* UserSetting.swift */; };
+		28D58FBA24CC05AC0089C134 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FB924CC05AC0089C134 /* HomeView.swift */; };
+		28D58FC224CC0DBF0089C134 /* Tab1Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FC124CC0DBF0089C134 /* Tab1Main.swift */; };
+		28D58FC724CC0E650089C134 /* Tab2Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FC624CC0E650089C134 /* Tab2Main.swift */; };
+		28D58FC924CC0E700089C134 /* Tab3Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FC824CC0E700089C134 /* Tab3Main.swift */; };
+		28D58FCB24CC0E7B0089C134 /* Tab4Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FCA24CC0E7B0089C134 /* Tab4Main.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28D58F9424CBEF8D0089C134 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28D58F7524CBEF8B0089C134 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28D58F7C24CBEF8B0089C134;
+			remoteInfo = Aroha_SwiftUI;
+		};
+		28D58F9F24CBEF8D0089C134 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28D58F7524CBEF8B0089C134 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28D58F7C24CBEF8B0089C134;
+			remoteInfo = Aroha_SwiftUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		28D58F7D24CBEF8B0089C134 /* Aroha_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aroha_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D58F8024CBEF8B0089C134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		28D58F8424CBEF8B0089C134 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		28D58F8624CBEF8D0089C134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28D58F8924CBEF8D0089C134 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		28D58F8C24CBEF8D0089C134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		28D58F8E24CBEF8D0089C134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D58F9324CBEF8D0089C134 /* Aroha_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Aroha_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D58F9724CBEF8D0089C134 /* Aroha_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aroha_SwiftUITests.swift; sourceTree = "<group>"; };
+		28D58F9924CBEF8D0089C134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D58F9E24CBEF8D0089C134 /* Aroha_SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Aroha_SwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28D58FA224CBEF8D0089C134 /* Aroha_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aroha_SwiftUIUITests.swift; sourceTree = "<group>"; };
+		28D58FA424CBEF8D0089C134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D58FB024CBF2B50089C134 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		28D58FB624CC02DF0089C134 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
+		28D58FB924CC05AC0089C134 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		28D58FC124CC0DBF0089C134 /* Tab1Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Main.swift; sourceTree = "<group>"; };
+		28D58FC624CC0E650089C134 /* Tab2Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2Main.swift; sourceTree = "<group>"; };
+		28D58FC824CC0E700089C134 /* Tab3Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab3Main.swift; sourceTree = "<group>"; };
+		28D58FCA24CC0E7B0089C134 /* Tab4Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab4Main.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28D58F7A24CBEF8B0089C134 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D58F9024CBEF8D0089C134 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D58F9B24CBEF8D0089C134 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28D58F7424CBEF8B0089C134 = {
+			isa = PBXGroup;
+			children = (
+				28D58F7F24CBEF8B0089C134 /* Aroha_SwiftUI */,
+				28D58F9624CBEF8D0089C134 /* Aroha_SwiftUITests */,
+				28D58FA124CBEF8D0089C134 /* Aroha_SwiftUIUITests */,
+				28D58F7E24CBEF8B0089C134 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28D58F7E24CBEF8B0089C134 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28D58F7D24CBEF8B0089C134 /* Aroha_SwiftUI.app */,
+				28D58F9324CBEF8D0089C134 /* Aroha_SwiftUITests.xctest */,
+				28D58F9E24CBEF8D0089C134 /* Aroha_SwiftUIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28D58F7F24CBEF8B0089C134 /* Aroha_SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				28D58FB624CC02DF0089C134 /* UserSetting.swift */,
+				28D58F8024CBEF8B0089C134 /* AppDelegate.swift */,
+				28D58FC024CC0D9F0089C134 /* Tab1 */,
+				28D58FC324CC0E1F0089C134 /* Tab2 */,
+				28D58FC424CC0E250089C134 /* Tab3 */,
+				28D58FC524CC0E2B0089C134 /* Tab4 */,
+				28D58FB824CC054E0089C134 /* View */,
+				28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */,
+				28D58F8624CBEF8D0089C134 /* Assets.xcassets */,
+				28D58F8B24CBEF8D0089C134 /* LaunchScreen.storyboard */,
+				28D58F8E24CBEF8D0089C134 /* Info.plist */,
+				28D58F8824CBEF8D0089C134 /* Preview Content */,
+			);
+			path = Aroha_SwiftUI;
+			sourceTree = "<group>";
+		};
+		28D58F8824CBEF8D0089C134 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				28D58F8924CBEF8D0089C134 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		28D58F9624CBEF8D0089C134 /* Aroha_SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				28D58F9724CBEF8D0089C134 /* Aroha_SwiftUITests.swift */,
+				28D58F9924CBEF8D0089C134 /* Info.plist */,
+			);
+			path = Aroha_SwiftUITests;
+			sourceTree = "<group>";
+		};
+		28D58FA124CBEF8D0089C134 /* Aroha_SwiftUIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				28D58FA224CBEF8D0089C134 /* Aroha_SwiftUIUITests.swift */,
+				28D58FA424CBEF8D0089C134 /* Info.plist */,
+			);
+			path = Aroha_SwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		28D58FB824CC054E0089C134 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28D58F8424CBEF8B0089C134 /* ContentView.swift */,
+				28D58FB024CBF2B50089C134 /* LoginView.swift */,
+				28D58FB924CC05AC0089C134 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28D58FC024CC0D9F0089C134 /* Tab1 */ = {
+			isa = PBXGroup;
+			children = (
+				28D58FC124CC0DBF0089C134 /* Tab1Main.swift */,
+			);
+			path = Tab1;
+			sourceTree = "<group>";
+		};
+		28D58FC324CC0E1F0089C134 /* Tab2 */ = {
+			isa = PBXGroup;
+			children = (
+				28D58FC624CC0E650089C134 /* Tab2Main.swift */,
+			);
+			path = Tab2;
+			sourceTree = "<group>";
+		};
+		28D58FC424CC0E250089C134 /* Tab3 */ = {
+			isa = PBXGroup;
+			children = (
+				28D58FC824CC0E700089C134 /* Tab3Main.swift */,
+			);
+			path = Tab3;
+			sourceTree = "<group>";
+		};
+		28D58FC524CC0E2B0089C134 /* Tab4 */ = {
+			isa = PBXGroup;
+			children = (
+				28D58FCA24CC0E7B0089C134 /* Tab4Main.swift */,
+			);
+			name = Tab4;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28D58F7C24CBEF8B0089C134 /* Aroha_SwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D58FA724CBEF8D0089C134 /* Build configuration list for PBXNativeTarget "Aroha_SwiftUI" */;
+			buildPhases = (
+				28D58F7924CBEF8B0089C134 /* Sources */,
+				28D58F7A24CBEF8B0089C134 /* Frameworks */,
+				28D58F7B24CBEF8B0089C134 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Aroha_SwiftUI;
+			productName = Aroha_SwiftUI;
+			productReference = 28D58F7D24CBEF8B0089C134 /* Aroha_SwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		28D58F9224CBEF8D0089C134 /* Aroha_SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D58FAA24CBEF8D0089C134 /* Build configuration list for PBXNativeTarget "Aroha_SwiftUITests" */;
+			buildPhases = (
+				28D58F8F24CBEF8D0089C134 /* Sources */,
+				28D58F9024CBEF8D0089C134 /* Frameworks */,
+				28D58F9124CBEF8D0089C134 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D58F9524CBEF8D0089C134 /* PBXTargetDependency */,
+			);
+			name = Aroha_SwiftUITests;
+			productName = Aroha_SwiftUITests;
+			productReference = 28D58F9324CBEF8D0089C134 /* Aroha_SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		28D58F9D24CBEF8D0089C134 /* Aroha_SwiftUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28D58FAD24CBEF8D0089C134 /* Build configuration list for PBXNativeTarget "Aroha_SwiftUIUITests" */;
+			buildPhases = (
+				28D58F9A24CBEF8D0089C134 /* Sources */,
+				28D58F9B24CBEF8D0089C134 /* Frameworks */,
+				28D58F9C24CBEF8D0089C134 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28D58FA024CBEF8D0089C134 /* PBXTargetDependency */,
+			);
+			name = Aroha_SwiftUIUITests;
+			productName = Aroha_SwiftUIUITests;
+			productReference = 28D58F9E24CBEF8D0089C134 /* Aroha_SwiftUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28D58F7524CBEF8B0089C134 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "김성헌";
+				TargetAttributes = {
+					28D58F7C24CBEF8B0089C134 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					28D58F9224CBEF8D0089C134 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 28D58F7C24CBEF8B0089C134;
+					};
+					28D58F9D24CBEF8D0089C134 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 28D58F7C24CBEF8B0089C134;
+					};
+				};
+			};
+			buildConfigurationList = 28D58F7824CBEF8B0089C134 /* Build configuration list for PBXProject "Aroha_SwiftUI" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28D58F7424CBEF8B0089C134;
+			productRefGroup = 28D58F7E24CBEF8B0089C134 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28D58F7C24CBEF8B0089C134 /* Aroha_SwiftUI */,
+				28D58F9224CBEF8D0089C134 /* Aroha_SwiftUITests */,
+				28D58F9D24CBEF8D0089C134 /* Aroha_SwiftUIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28D58F7B24CBEF8B0089C134 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D58F8D24CBEF8D0089C134 /* LaunchScreen.storyboard in Resources */,
+				28D58F8A24CBEF8D0089C134 /* Preview Assets.xcassets in Resources */,
+				28D58F8724CBEF8D0089C134 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D58F9124CBEF8D0089C134 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D58F9C24CBEF8D0089C134 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28D58F7924CBEF8B0089C134 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D58F8124CBEF8B0089C134 /* AppDelegate.swift in Sources */,
+				28D58FCB24CC0E7B0089C134 /* Tab4Main.swift in Sources */,
+				28D58F8324CBEF8B0089C134 /* SceneDelegate.swift in Sources */,
+				28D58FB124CBF2B50089C134 /* LoginView.swift in Sources */,
+				28D58FBA24CC05AC0089C134 /* HomeView.swift in Sources */,
+				28D58FC224CC0DBF0089C134 /* Tab1Main.swift in Sources */,
+				28D58FB724CC02DF0089C134 /* UserSetting.swift in Sources */,
+				28D58F8524CBEF8B0089C134 /* ContentView.swift in Sources */,
+				28D58FC924CC0E700089C134 /* Tab3Main.swift in Sources */,
+				28D58FC724CC0E650089C134 /* Tab2Main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D58F8F24CBEF8D0089C134 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D58F9824CBEF8D0089C134 /* Aroha_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28D58F9A24CBEF8D0089C134 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D58FA324CBEF8D0089C134 /* Aroha_SwiftUIUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28D58F9524CBEF8D0089C134 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28D58F7C24CBEF8B0089C134 /* Aroha_SwiftUI */;
+			targetProxy = 28D58F9424CBEF8D0089C134 /* PBXContainerItemProxy */;
+		};
+		28D58FA024CBEF8D0089C134 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28D58F7C24CBEF8B0089C134 /* Aroha_SwiftUI */;
+			targetProxy = 28D58F9F24CBEF8D0089C134 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		28D58F8B24CBEF8D0089C134 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28D58F8C24CBEF8D0089C134 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28D58FA524CBEF8D0089C134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		28D58FA624CBEF8D0089C134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28D58FA824CBEF8D0089C134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Aroha_SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 8GX33365BF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Aroha_SwiftUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KIMSEONGHEON.Aroha-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		28D58FA924CBEF8D0089C134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Aroha_SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 8GX33365BF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Aroha_SwiftUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KIMSEONGHEON.Aroha-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		28D58FAB24CBEF8D0089C134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GX33365BF;
+				INFOPLIST_FILE = Aroha_SwiftUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KIMSEONGHEON.Aroha-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aroha_SwiftUI.app/Aroha_SwiftUI";
+			};
+			name = Debug;
+		};
+		28D58FAC24CBEF8D0089C134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GX33365BF;
+				INFOPLIST_FILE = Aroha_SwiftUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KIMSEONGHEON.Aroha-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aroha_SwiftUI.app/Aroha_SwiftUI";
+			};
+			name = Release;
+		};
+		28D58FAE24CBEF8D0089C134 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GX33365BF;
+				INFOPLIST_FILE = Aroha_SwiftUIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KIMSEONGHEON.Aroha-SwiftUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Aroha_SwiftUI;
+			};
+			name = Debug;
+		};
+		28D58FAF24CBEF8D0089C134 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GX33365BF;
+				INFOPLIST_FILE = Aroha_SwiftUIUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KIMSEONGHEON.Aroha-SwiftUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Aroha_SwiftUI;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28D58F7824CBEF8B0089C134 /* Build configuration list for PBXProject "Aroha_SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D58FA524CBEF8D0089C134 /* Debug */,
+				28D58FA624CBEF8D0089C134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D58FA724CBEF8D0089C134 /* Build configuration list for PBXNativeTarget "Aroha_SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D58FA824CBEF8D0089C134 /* Debug */,
+				28D58FA924CBEF8D0089C134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D58FAA24CBEF8D0089C134 /* Build configuration list for PBXNativeTarget "Aroha_SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D58FAB24CBEF8D0089C134 /* Debug */,
+				28D58FAC24CBEF8D0089C134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28D58FAD24CBEF8D0089C134 /* Build configuration list for PBXNativeTarget "Aroha_SwiftUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28D58FAE24CBEF8D0089C134 /* Debug */,
+				28D58FAF24CBEF8D0089C134 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28D58F7524CBEF8B0089C134 /* Project object */;
+}
