@@ -11,6 +11,8 @@ import SwiftUI
 
 struct Tab3MainView:View{
     var body:some View{
-        Text("Tab3MainView")
-    }
+        NavigationView{
+            Text("Hello World!")
+                .navigationBarTitle(Text("획득한 전체 스탬프").font(.subheadline), displayMode: .inline)
+        }    }
 }

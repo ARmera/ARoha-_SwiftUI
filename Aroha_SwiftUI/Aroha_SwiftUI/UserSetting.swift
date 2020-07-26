@@ -12,9 +12,11 @@ class UserSettings:ObservableObject{
     @Published var isLogin = false;
     @Published var tabselected = 0;
 }
+
 enum tabMenu:Int{
     case CamputTourTab1 = 0
     case TourLocationTab2 = 1
     case StampTab3 = 2
     case MyPageTab4 = 3
 }
+

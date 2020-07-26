@@ -11,6 +11,8 @@ import SwiftUI
 
 struct Tab4MainView:View{
     var body:some View{
-        Text("Tab4MainView")
-    }
+        NavigationView{
+            Text("Hello World!")
+                .navigationBarTitle(Text("마이 페이지").font(.subheadline), displayMode: .inline)
+        }    }
 }

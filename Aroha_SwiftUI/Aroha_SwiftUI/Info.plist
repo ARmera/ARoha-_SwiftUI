@@ -56,5 +56,21 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) camera use
+
+</string>
+	<key>Privacy - Photo Library Additions Usage Description
+</key>
+	<string>$(PRODUCT_NAME) photo use
+
+</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>location description.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

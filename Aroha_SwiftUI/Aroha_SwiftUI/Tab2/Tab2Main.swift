@@ -11,6 +11,8 @@ import SwiftUI
 
 struct Tab2MainView:View{
     var body:some View{
-        Text("Tab2MainView")
-    }
+        NavigationView{
+            Text("Hello World!")
+                .navigationBarTitle(Text("전체 투어 명소").font(.subheadline), displayMode: .inline)
+        }    }
 }

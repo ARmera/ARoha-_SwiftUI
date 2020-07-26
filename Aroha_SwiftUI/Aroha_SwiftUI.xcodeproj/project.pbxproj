@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28CDF7EE24CC211E000EF9E9 /* Tab1SelectRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */; };
+		28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */; };
+		28CDF7F224CC2543000EF9E9 /* AR&MapWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */; };
+		28CDF7F424CC3198000EF9E9 /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F324CC3198000EF9E9 /* temp.swift */; };
 		28D58F8124CBEF8B0089C134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8024CBEF8B0089C134 /* AppDelegate.swift */; };
 		28D58F8324CBEF8B0089C134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */; };
 		28D58F8524CBEF8B0089C134 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8424CBEF8B0089C134 /* ContentView.swift */; };
@@ -22,6 +26,7 @@
 		28D58FC724CC0E650089C134 /* Tab2Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FC624CC0E650089C134 /* Tab2Main.swift */; };
 		28D58FC924CC0E700089C134 /* Tab3Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FC824CC0E700089C134 /* Tab3Main.swift */; };
 		28D58FCB24CC0E7B0089C134 /* Tab4Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FCA24CC0E7B0089C134 /* Tab4Main.swift */; };
+		28D58FCD24CC175A0089C134 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FCC24CC175A0089C134 /* SnapCarousel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1SelectRoute.swift; sourceTree = "<group>"; };
+		28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Tour.swift; sourceTree = "<group>"; };
+		28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AR&MapWebView.swift"; sourceTree = "<group>"; };
+		28CDF7F324CC3198000EF9E9 /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
 		28D58F7D24CBEF8B0089C134 /* Aroha_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aroha_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D58F8024CBEF8B0089C134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +72,7 @@
 		28D58FC624CC0E650089C134 /* Tab2Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab2Main.swift; sourceTree = "<group>"; };
 		28D58FC824CC0E700089C134 /* Tab3Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab3Main.swift; sourceTree = "<group>"; };
 		28D58FCA24CC0E7B0089C134 /* Tab4Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab4Main.swift; sourceTree = "<group>"; };
+		28D58FCC24CC175A0089C134 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +179,11 @@
 			isa = PBXGroup;
 			children = (
 				28D58FC124CC0DBF0089C134 /* Tab1Main.swift */,
+				28D58FCC24CC175A0089C134 /* SnapCarousel.swift */,
+				28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */,
+				28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */,
+				28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */,
+				28CDF7F324CC3198000EF9E9 /* temp.swift */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -328,16 +343,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */,
 				28D58F8124CBEF8B0089C134 /* AppDelegate.swift in Sources */,
+				28CDF7F224CC2543000EF9E9 /* AR&MapWebView.swift in Sources */,
+				28D58FCD24CC175A0089C134 /* SnapCarousel.swift in Sources */,
 				28D58FCB24CC0E7B0089C134 /* Tab4Main.swift in Sources */,
 				28D58F8324CBEF8B0089C134 /* SceneDelegate.swift in Sources */,
 				28D58FB124CBF2B50089C134 /* LoginView.swift in Sources */,
 				28D58FBA24CC05AC0089C134 /* HomeView.swift in Sources */,
 				28D58FC224CC0DBF0089C134 /* Tab1Main.swift in Sources */,
+				28CDF7EE24CC211E000EF9E9 /* Tab1SelectRoute.swift in Sources */,
 				28D58FB724CC02DF0089C134 /* UserSetting.swift in Sources */,
 				28D58F8524CBEF8B0089C134 /* ContentView.swift in Sources */,
 				28D58FC924CC0E700089C134 /* Tab3Main.swift in Sources */,
 				28D58FC724CC0E650089C134 /* Tab2Main.swift in Sources */,
+				28CDF7F424CC3198000EF9E9 /* temp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Aroha_SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 8GX33365BF;
+				DEVELOPMENT_TEAM = GJ5M883825;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aroha_SwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -524,7 +544,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Aroha_SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 8GX33365BF;
+				DEVELOPMENT_TEAM = GJ5M883825;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aroha_SwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
