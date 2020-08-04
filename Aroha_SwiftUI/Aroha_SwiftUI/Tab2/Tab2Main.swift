@@ -10,9 +10,11 @@ import Foundation
 import SwiftUI
 
 struct Tab2MainView:View{
+    let screenHeight = UIScreen.main.bounds.size.height
     var body:some View{
-        NavigationView{
-            Text("Hello World!")
-                .navigationBarTitle(Text("전체 투어 명소").font(.subheadline), displayMode: .inline)
-        }    }
+        ZStack{
+            MapView()
+            SnapCarousel(UIState: UIStateModel()).offset(x: 0, y:  screenHeight/4 )
+        }
+    }
 }

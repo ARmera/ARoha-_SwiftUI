@@ -41,7 +41,7 @@ struct SnapCarousel: View {
                             Text("\(item.name)")
                         }
                         .foregroundColor( Color.black )
-                        .background( Color.gray )
+                        .background( Color.red )
                         .cornerRadius( 8 )
                         .shadow( color: Color( "shadow1" ), radius: 4, x: 0, y: 4 )
                         .transition( AnyTransition.slide )
@@ -152,7 +152,6 @@ struct Canvas<Content : View> : View {
     var body: some View {
         content
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-            .background(Color.white.edgesIgnoringSafeArea(.all))
     }
 }
 

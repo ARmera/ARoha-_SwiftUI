@@ -14,10 +14,9 @@ struct Tab1TourView : View{
     @EnvironmentObject var settings:UserSettings
     var body:some View{
         VStack{
-            DemoVideoStreaming()
-            /*AR_MaPWebView( request: URLRequest(url: URL(string : "https://ar.konk.uk/ldh/rsync")!)).onAppear(){
+            AR_MaPWebView(request: URLRequest(url: URL(string : "https://ar.konk.uk/ldh/rsync")!)).onAppear(){
                 self.checkPermission()
-            }*/
+            }
             HStack{
                 Text("현재위치: ~~~~").frame(maxWidth: .infinity, alignment: .center)
                 Button(action: {
