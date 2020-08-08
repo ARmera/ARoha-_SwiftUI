@@ -12,13 +12,12 @@ import AVFoundation
 
 struct Tab1TourView : View{
     @EnvironmentObject var settings:UserSettings
+    @State var log:String = "초기값"
     var body:some View{
         VStack{
-            AR_MaPWebView(request: URLRequest(url: URL(string : "https://ar.konk.uk/ldh/rsync")!)).onAppear(){
-                self.checkPermission()
-            }
+            DemoVideoStreaming(log:$log)
             HStack{
-                Text("현재위치: ~~~~").frame(maxWidth: .infinity, alignment: .center)
+                Text("현재위치: \(log)").frame(maxWidth: .infinity, alignment: .center)
                 Button(action: {
                     print("스탬프 인식")
                 }){

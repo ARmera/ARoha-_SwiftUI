@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28247C1C24DE6BE200F89AAA /* Pos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28247C1B24DE6BE200F89AAA /* Pos.swift */; };
 		286AE66B24D5639F004018E5 /* MapViewTab2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AE66A24D5639F004018E5 /* MapViewTab2.swift */; };
 		28CDF7EE24CC211E000EF9E9 /* Tab1SelectRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */; };
 		28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */; };
@@ -28,6 +29,9 @@
 		28D58FC924CC0E700089C134 /* Tab3Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FC824CC0E700089C134 /* Tab3Main.swift */; };
 		28D58FCB24CC0E7B0089C134 /* Tab4Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FCA24CC0E7B0089C134 /* Tab4Main.swift */; };
 		28D58FCD24CC175A0089C134 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FCC24CC175A0089C134 /* SnapCarousel.swift */; };
+		299F3C80C4259BB1C118C8B0 /* Pods_Aroha_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0362A6DBA80419ADFD02644 /* Pods_Aroha_SwiftUI.framework */; };
+		7E5DA98E66ECEA4E626078F5 /* Pods_Aroha_SwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B74DAF3B2BC734694CBB5C3 /* Pods_Aroha_SwiftUITests.framework */; };
+		FBC5607BF6DC1D42FFB72853 /* Pods_Aroha_SwiftUI_Aroha_SwiftUIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90984B74185C6FB31CA68079 /* Pods_Aroha_SwiftUI_Aroha_SwiftUIUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28247C1B24DE6BE200F89AAA /* Pos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pos.swift; sourceTree = "<group>"; };
 		286AE66A24D5639F004018E5 /* MapViewTab2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewTab2.swift; sourceTree = "<group>"; };
 		28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1SelectRoute.swift; sourceTree = "<group>"; };
 		28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Tour.swift; sourceTree = "<group>"; };
@@ -75,6 +80,15 @@
 		28D58FC824CC0E700089C134 /* Tab3Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab3Main.swift; sourceTree = "<group>"; };
 		28D58FCA24CC0E7B0089C134 /* Tab4Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab4Main.swift; sourceTree = "<group>"; };
 		28D58FCC24CC175A0089C134 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
+		5ADA9F47334049A47FFBB2C2 /* Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.release.xcconfig"; path = "Target Support Files/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8B74DAF3B2BC734694CBB5C3 /* Pods_Aroha_SwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aroha_SwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90984B74185C6FB31CA68079 /* Pods_Aroha_SwiftUI_Aroha_SwiftUIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aroha_SwiftUI_Aroha_SwiftUIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97A68EB6E0B8CDD4F08915FE /* Pods-Aroha_SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aroha_SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-Aroha_SwiftUI/Pods-Aroha_SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		A7D85B68E9E497E8750B43B2 /* Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.debug.xcconfig"; path = "Target Support Files/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BDA4A47E0294420048523544 /* Pods-Aroha_SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aroha_SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-Aroha_SwiftUI/Pods-Aroha_SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
+		C0362A6DBA80419ADFD02644 /* Pods_Aroha_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aroha_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C535F2FA51DCBA4C79396BB3 /* Pods-Aroha_SwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aroha_SwiftUITests.release.xcconfig"; path = "Target Support Files/Pods-Aroha_SwiftUITests/Pods-Aroha_SwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CC1298B93F3EEC6BFA04A83D /* Pods-Aroha_SwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aroha_SwiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-Aroha_SwiftUITests/Pods-Aroha_SwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299F3C80C4259BB1C118C8B0 /* Pods_Aroha_SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5DA98E66ECEA4E626078F5 /* Pods_Aroha_SwiftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,12 +112,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC5607BF6DC1D42FFB72853 /* Pods_Aroha_SwiftUI_Aroha_SwiftUIUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28247C1A24DE6BD100F89AAA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				28247C1B24DE6BE200F89AAA /* Pos.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		28D58F7424CBEF8B0089C134 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +134,8 @@
 				28D58F9624CBEF8D0089C134 /* Aroha_SwiftUITests */,
 				28D58FA124CBEF8D0089C134 /* Aroha_SwiftUIUITests */,
 				28D58F7E24CBEF8B0089C134 /* Products */,
+				6F5140EFC789A1EFC8BB0593 /* Pods */,
+				7834AFF5D78C2212480E3C87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,8 +159,9 @@
 				28D58FC424CC0E250089C134 /* Tab3 */,
 				28D58FC524CC0E2B0089C134 /* Tab4 */,
 				28D58FB824CC054E0089C134 /* View */,
-				28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */,
 				28D58F8624CBEF8D0089C134 /* Assets.xcassets */,
+				28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */,
+				28247C1A24DE6BD100F89AAA /* Data */,
 				28D58F8B24CBEF8D0089C134 /* LaunchScreen.storyboard */,
 				28D58F8E24CBEF8D0089C134 /* Info.plist */,
 				28D58F8824CBEF8D0089C134 /* Preview Content */,
@@ -215,6 +243,29 @@
 			name = Tab4;
 			sourceTree = "<group>";
 		};
+		6F5140EFC789A1EFC8BB0593 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97A68EB6E0B8CDD4F08915FE /* Pods-Aroha_SwiftUI.debug.xcconfig */,
+				BDA4A47E0294420048523544 /* Pods-Aroha_SwiftUI.release.xcconfig */,
+				A7D85B68E9E497E8750B43B2 /* Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.debug.xcconfig */,
+				5ADA9F47334049A47FFBB2C2 /* Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.release.xcconfig */,
+				CC1298B93F3EEC6BFA04A83D /* Pods-Aroha_SwiftUITests.debug.xcconfig */,
+				C535F2FA51DCBA4C79396BB3 /* Pods-Aroha_SwiftUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7834AFF5D78C2212480E3C87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0362A6DBA80419ADFD02644 /* Pods_Aroha_SwiftUI.framework */,
+				90984B74185C6FB31CA68079 /* Pods_Aroha_SwiftUI_Aroha_SwiftUIUITests.framework */,
+				8B74DAF3B2BC734694CBB5C3 /* Pods_Aroha_SwiftUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28D58FA724CBEF8D0089C134 /* Build configuration list for PBXNativeTarget "Aroha_SwiftUI" */;
 			buildPhases = (
+				F07963BB2AF4AC9BE1F0C744 /* [CP] Check Pods Manifest.lock */,
 				28D58F7924CBEF8B0089C134 /* Sources */,
 				28D58F7A24CBEF8B0089C134 /* Frameworks */,
 				28D58F7B24CBEF8B0089C134 /* Resources */,
+				9C32A2F36584113E989943CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,6 +292,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28D58FAA24CBEF8D0089C134 /* Build configuration list for PBXNativeTarget "Aroha_SwiftUITests" */;
 			buildPhases = (
+				26F1622BD51847753E829256 /* [CP] Check Pods Manifest.lock */,
 				28D58F8F24CBEF8D0089C134 /* Sources */,
 				28D58F9024CBEF8D0089C134 /* Frameworks */,
 				28D58F9124CBEF8D0089C134 /* Resources */,
@@ -257,9 +311,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28D58FAD24CBEF8D0089C134 /* Build configuration list for PBXNativeTarget "Aroha_SwiftUIUITests" */;
 			buildPhases = (
+				447367749801ED619B71710B /* [CP] Check Pods Manifest.lock */,
 				28D58F9A24CBEF8D0089C134 /* Sources */,
 				28D58F9B24CBEF8D0089C134 /* Frameworks */,
 				28D58F9C24CBEF8D0089C134 /* Resources */,
+				3F1C194ED5C8B6D44240411C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,12 +397,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26F1622BD51847753E829256 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aroha_SwiftUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F1C194ED5C8B6D44240411C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		447367749801ED619B71710B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C32A2F36584113E989943CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aroha_SwiftUI/Pods-Aroha_SwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Aroha_SwiftUI/Pods-Aroha_SwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aroha_SwiftUI/Pods-Aroha_SwiftUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F07963BB2AF4AC9BE1F0C744 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aroha_SwiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		28D58F7924CBEF8B0089C134 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */,
+				28247C1C24DE6BE200F89AAA /* Pos.swift in Sources */,
 				28D58F8124CBEF8B0089C134 /* AppDelegate.swift in Sources */,
 				28CDF7F224CC2543000EF9E9 /* AR&MapWebView.swift in Sources */,
 				28D58FCD24CC175A0089C134 /* SnapCarousel.swift in Sources */,
@@ -524,11 +684,12 @@
 		};
 		28D58FA824CBEF8D0089C134 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97A68EB6E0B8CDD4F08915FE /* Pods-Aroha_SwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Aroha_SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = GJ5M883825;
+				DEVELOPMENT_TEAM = 58F897TACF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aroha_SwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -544,11 +705,12 @@
 		};
 		28D58FA924CBEF8D0089C134 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDA4A47E0294420048523544 /* Pods-Aroha_SwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Aroha_SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = GJ5M883825;
+				DEVELOPMENT_TEAM = 58F897TACF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aroha_SwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -564,6 +726,7 @@
 		};
 		28D58FAB24CBEF8D0089C134 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC1298B93F3EEC6BFA04A83D /* Pods-Aroha_SwiftUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -586,6 +749,7 @@
 		};
 		28D58FAC24CBEF8D0089C134 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C535F2FA51DCBA4C79396BB3 /* Pods-Aroha_SwiftUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -608,6 +772,7 @@
 		};
 		28D58FAE24CBEF8D0089C134 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7D85B68E9E497E8750B43B2 /* Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -628,6 +793,7 @@
 		};
 		28D58FAF24CBEF8D0089C134 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ADA9F47334049A47FFBB2C2 /* Pods-Aroha_SwiftUI-Aroha_SwiftUIUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
