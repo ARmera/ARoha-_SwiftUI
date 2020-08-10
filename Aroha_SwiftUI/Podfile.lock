@@ -1,22 +1,26 @@
 PODS:
+  - Alamofire (5.2.2)
   - ARCL (1.3.0)
   - CocoaLumberjack/Core (3.6.2)
   - CocoaLumberjack/Swift (3.6.2):
     - CocoaLumberjack/Core
 
 DEPENDENCIES:
+  - Alamofire
   - ARCL
   - CocoaLumberjack/Swift
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - ARCL
     - CocoaLumberjack
 
 SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   ARCL: db48b6927d6f3f49f29568295ed91c94ab8d4aab
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
 
-PODFILE CHECKSUM: 798ebac8292bda70c7613f7255adea0cbfa548c2
+PODFILE CHECKSUM: eae9b6b6ac967ed387efd7c5baf5b5b793a183fb
 
 COCOAPODS: 1.9.3

@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		28247C1C24DE6BE200F89AAA /* Pos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28247C1B24DE6BE200F89AAA /* Pos.swift */; };
+		28468B2124E179B00098AD96 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28468B2024E179B00098AD96 /* HttpRequest.swift */; };
+		28468B2424E188640098AD96 /* Pretreatment .swift in Sources */ = {isa = PBXBuildFile; fileRef = 28468B2324E188640098AD96 /* Pretreatment .swift */; };
 		286AE66B24D5639F004018E5 /* MapViewTab2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286AE66A24D5639F004018E5 /* MapViewTab2.swift */; };
 		28CDF7EE24CC211E000EF9E9 /* Tab1SelectRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */; };
 		28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */; };
 		28CDF7F224CC2543000EF9E9 /* AR&MapWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */; };
-		28CDF7F424CC3198000EF9E9 /* temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F324CC3198000EF9E9 /* temp.swift */; };
+		28CDF7F424CC3198000EF9E9 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F324CC3198000EF9E9 /* ARSceneView.swift */; };
 		28D58F8124CBEF8B0089C134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8024CBEF8B0089C134 /* AppDelegate.swift */; };
 		28D58F8324CBEF8B0089C134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */; };
 		28D58F8524CBEF8B0089C134 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8424CBEF8B0089C134 /* ContentView.swift */; };
@@ -53,11 +55,13 @@
 
 /* Begin PBXFileReference section */
 		28247C1B24DE6BE200F89AAA /* Pos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pos.swift; sourceTree = "<group>"; };
+		28468B2024E179B00098AD96 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		28468B2324E188640098AD96 /* Pretreatment .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pretreatment .swift"; sourceTree = "<group>"; };
 		286AE66A24D5639F004018E5 /* MapViewTab2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewTab2.swift; sourceTree = "<group>"; };
 		28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1SelectRoute.swift; sourceTree = "<group>"; };
 		28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Tour.swift; sourceTree = "<group>"; };
 		28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AR&MapWebView.swift"; sourceTree = "<group>"; };
-		28CDF7F324CC3198000EF9E9 /* temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = temp.swift; sourceTree = "<group>"; };
+		28CDF7F324CC3198000EF9E9 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
 		28D58F7D24CBEF8B0089C134 /* Aroha_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aroha_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D58F8024CBEF8B0089C134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +131,22 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		28468B1F24E1798E0098AD96 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				28468B2024E179B00098AD96 /* HttpRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		28468B2224E188470098AD96 /* Pretreatment */ = {
+			isa = PBXGroup;
+			children = (
+				28468B2324E188640098AD96 /* Pretreatment .swift */,
+			);
+			path = Pretreatment;
+			sourceTree = "<group>";
+		};
 		28D58F7424CBEF8B0089C134 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +174,8 @@
 			children = (
 				28D58FB624CC02DF0089C134 /* UserSetting.swift */,
 				28D58F8024CBEF8B0089C134 /* AppDelegate.swift */,
+				28468B2224E188470098AD96 /* Pretreatment */,
+				28468B1F24E1798E0098AD96 /* API */,
 				28D58FC024CC0D9F0089C134 /* Tab1 */,
 				28D58FC324CC0E1F0089C134 /* Tab2 */,
 				28D58FC424CC0E250089C134 /* Tab3 */,
@@ -213,7 +235,7 @@
 				28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */,
 				28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */,
 				28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */,
-				28CDF7F324CC3198000EF9E9 /* temp.swift */,
+				28CDF7F324CC3198000EF9E9 /* ARSceneView.swift */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -510,6 +532,7 @@
 				28D58F8124CBEF8B0089C134 /* AppDelegate.swift in Sources */,
 				28CDF7F224CC2543000EF9E9 /* AR&MapWebView.swift in Sources */,
 				28D58FCD24CC175A0089C134 /* SnapCarousel.swift in Sources */,
+				28468B2124E179B00098AD96 /* HttpRequest.swift in Sources */,
 				28D58FCB24CC0E7B0089C134 /* Tab4Main.swift in Sources */,
 				28D58F8324CBEF8B0089C134 /* SceneDelegate.swift in Sources */,
 				28D58FB124CBF2B50089C134 /* LoginView.swift in Sources */,
@@ -521,7 +544,8 @@
 				28D58FC924CC0E700089C134 /* Tab3Main.swift in Sources */,
 				28D58FC724CC0E650089C134 /* Tab2Main.swift in Sources */,
 				286AE66B24D5639F004018E5 /* MapViewTab2.swift in Sources */,
-				28CDF7F424CC3198000EF9E9 /* temp.swift in Sources */,
+				28468B2424E188640098AD96 /* Pretreatment .swift in Sources */,
+				28CDF7F424CC3198000EF9E9 /* ARSceneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

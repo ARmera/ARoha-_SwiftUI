@@ -6,6 +6,7 @@ target 'Aroha_SwiftUI' do
   use_frameworks!
 
   # Pods for Aroha_SwiftUI
+  pod 'Alamofire'
   pod 'ARCL'
   pod 'CocoaLumberjack/Swift'
   target 'Aroha_SwiftUITests' do

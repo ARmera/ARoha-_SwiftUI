@@ -15,7 +15,7 @@ struct Tab1TourView : View{
     @State var log:String = "초기값"
     var body:some View{
         VStack{
-            DemoVideoStreaming(log:$log)
+            DemoVideoStreaming(log:$log).frame(width: 100, height: 100, alignment: .center)
             HStack{
                 Text("현재위치: \(log)").frame(maxWidth: .infinity, alignment: .center)
                 Button(action: {
@@ -25,6 +25,7 @@ struct Tab1TourView : View{
                         .frame(width : 100,alignment: .trailing)
                 }.padding()
             }
+            //Image(uiImage: self.settings.test).frame(width: 100, height: 100, alignment: .center)
             AR_MaPWebView( request: URLRequest(url: URL(string : "https://ar.konk.uk/kdh/rsync/map.html")!))
         }
         

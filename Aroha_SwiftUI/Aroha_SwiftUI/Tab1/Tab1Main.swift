@@ -7,7 +7,7 @@
 //
 import Foundation
 import SwiftUI
-
+import MapKit
 struct Tab1MainView:View{
     @EnvironmentObject var settings:UserSettings
     var body:some View{
@@ -24,12 +24,19 @@ struct Tab1ContentView:View{
         VStack{
             SnapCarousel(UIState: UIStateModel())
             HStack{
+                //go to toure
                 NavigationLink(destination: Tab1TourView()){
-                    Text("투어 되돌아가기").padding().overlay(
+                    Text("투어 시작하기").padding().overlay(
                         RoundedRectangle(cornerRadius: 16)
                             .stroke(Color.blue, lineWidth: 4)
                     )
-                }.buttonStyle(PlainButtonStyle()).padding()
+                    }.buttonStyle(PlainButtonStyle()).padding()
+                    .simultaneousGesture(TapGesture().onEnded{
+                        print("TapGesture")
+                        self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: 37.5396509, longitude: 127.0710501), dest: CLLocationCoordinate2D(latitude:37.5418772, longitude: 127.07602))
+
+                    })
+                    
                 //cancel the tour
                 NavigationLink(destination: Tab2MainView()){
                     Text("투어 취소하기").padding().overlay(

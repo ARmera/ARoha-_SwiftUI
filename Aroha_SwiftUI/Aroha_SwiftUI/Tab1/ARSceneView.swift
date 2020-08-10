@@ -11,12 +11,13 @@ struct ARSceneViewHolder: UIViewRepresentable {
         return Coordinator(self)
     }
 
-    let dest = Pos(37.53969283119606,127.07282707914266)
+    let dest = Pos(37.542249729731786,127.07782375328537)
     let scene = SceneLocationView()
     var locationManager = CLLocationManager()
-    var txtSCN:SCNText = SCNText(string: "tqtqtqtq", extrusionDepth: 0.5)
-    
+    var txtSCN:SCNText = SCNText(string: "initial", extrusionDepth: 0.5)
+    @EnvironmentObject var settings:UserSettings
     @Binding var log:String
+    
     func makeUIView(context: UIViewRepresentableContext<ARSceneViewHolder>) -> SCNView{
         locationManager.delegate = context.coordinator
         GPSSetting()
@@ -30,7 +31,8 @@ struct ARSceneViewHolder: UIViewRepresentable {
             return
         }
         let boxNode = SCNNode(geometry: txtSCN)
-        let locationNode = LocationNode(location: CLLocation(latitude: coord.latitude, longitude: coord.longitude))
+        //latitude37.542249729731786/ longitude127.07782375328537
+        let locationNode = LocationNode(location: CLLocation(latitude: 37.542249729731786, longitude: 127.07782375328537))
 //        let boxNode = SCNNode(geometry: txtSCN)
 //        let locationNode = LocationNode(location: CLLocation(latitude: 37.541397497580704, longitude: 127.09980830971979))
 
@@ -50,6 +52,8 @@ struct ARSceneViewHolder: UIViewRepresentable {
                 parent.txtSCN.string = "\(parent.dest.calcDistance(pos: Pos(Double(coor.latitude),Double(coor.longitude))))"
                 print("latitude" + String(coor.latitude) + "/ longitude" + String(coor.longitude))
                 parent.log = "latitude" + String(coor.latitude) + "/ longitude" + String(coor.longitude)
+                //지워야함
+                parent.settings.test = parent.scene.snapshot()
             }
         }
     }
