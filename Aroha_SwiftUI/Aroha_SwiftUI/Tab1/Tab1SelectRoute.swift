@@ -10,6 +10,10 @@ import Foundation
 import SwiftUI
 struct Tab1SelectedRoute:View{
     var body:some View{
-        Text("준비중")
+        Group{
+            Text("준비중")
+            Text("준비중")
+        }
+        
     }
 }
