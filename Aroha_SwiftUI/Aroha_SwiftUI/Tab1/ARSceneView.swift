@@ -27,7 +27,7 @@ struct ARSceneViewHolder: UIViewRepresentable {
     func updateUIView(_ uiView: SCNView, context: Context) {
         print("호출됨")
         guard let coord = (locationManager.location?.coordinate) else{ // locationManager 값이 nil일 경우
-            print("안됨");
+            print("안됨\n");
             return
         }
         let boxNode = SCNNode(geometry: txtSCN)
