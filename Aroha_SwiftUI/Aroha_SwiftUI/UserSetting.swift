@@ -27,7 +27,6 @@ class UserSettings:ObservableObject{
     }
     
     func requestRoute(start:CLLocationCoordinate2D,dest:CLLocationCoordinate2D){
-        let url = "https://apis.openapi.sk.com/tmap/routes/pedestrian?version=1&format=json&callback=result"
         let appKey = "3b93e7ea-9bb4-4402-afdb-a96aaab9fa23"
         let header:HTTPHeaders = [
             "Accept" : "application/json",
@@ -41,8 +40,9 @@ class UserSettings:ObservableObject{
             "startName" : "출발지",
             "endName" : "도착지"
         ]
+
         
-        AF.request(url,method: .post,parameters: body,encoding: URLEncoding.default,headers: header)
+        AF.request(url.TMapRoute.rawValue,method: .post ,parameters: body,encoding: URLEncoding.default,headers: header)
             .responseData{ response in
                 switch response.result{
                 case .success(let value):

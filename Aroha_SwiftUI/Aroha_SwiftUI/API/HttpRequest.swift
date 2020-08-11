@@ -10,4 +10,6 @@ import Foundation
 import Alamofire
 import MapKit
 
-
+enum url:String{
+    case TMapRoute = "https://apis.openapi.sk.com/tmap/routes/pedestrian?version=1&format=json&callback=result"
+}
