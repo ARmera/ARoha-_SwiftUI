@@ -713,9 +713,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Aroha_SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = 58F897TACF;
+				DEVELOPMENT_TEAM = GJ5M883825;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aroha_SwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -737,6 +738,7 @@
 				DEVELOPMENT_TEAM = 58F897TACF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Aroha_SwiftUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
