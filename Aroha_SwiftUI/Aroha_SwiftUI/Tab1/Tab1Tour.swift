@@ -13,6 +13,7 @@ import AVFoundation
 struct Tab1TourView : View{
     @EnvironmentObject var settings:UserSettings
     @State var log:String = "초기값"
+    
     var body:some View{
         VStack{
             DemoVideoStreaming(log:$log).frame(width: 100, height: 100, alignment: .center)
