@@ -1,5 +1,5 @@
 # ARoHa! with SwiftUI
-> Short blurb about what your product does.
+> 건국대학교 증강현실 투어 iOS 어플리케이션 
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
