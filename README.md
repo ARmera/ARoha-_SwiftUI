@@ -2,35 +2,34 @@
 > 건국대학교 증강현실 투어 iOS 어플리케이션 
 
 
-![](header.png)
+![Pod Platform](https://img.shields.io/badge/Platform-iOS_13.0-brightgreen)
+![Pod License](https://img.shields.io/badge/License-MIT-blue)
+![Swift Version](https://img.shields.io/badge/Swift-5.1-blueviolet)
 
-## Installation
+## 프로젝트 목표
 
-OS X & Linux:
+#### 증강현실 기술을 활용하여 사용자에게 다양한 시각적인 정보를 제공하는 캠퍼스 탐방 및 스탬프 투어 어플리케이션 개발한다
 
-```sh
-npm install my-crazy-module --save
-```
+## 개발 환경 구성
 
-Windows:
-
-```sh
-edit autoexec.bat
-```
-
-## Usage example
-
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
-
-_For more examples and usage, please refer to the [Wiki][wiki]._
+- CocoaPods 1.9.3
+   * pod 'ARCL'
+   * pod 'AlamoFire'
+   * pod 'CocoaLumberjack/Swift'
 
 ## Development setup
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+* Cocoapod 1.9.3 
+* ARCL '1.3.1'
+* AlamoFire '5.2.2'
+* CocoaLumberjack/Swift 
 
 ```sh
-make install
-npm test
+- CocoaPods 1.9.3
+   * pod 'ARCL'
+   * pod 'AlamoFire'
+   * pod 'CocoaLumberjack/Swift'
+pod install
 ```
 
 ## Release History
