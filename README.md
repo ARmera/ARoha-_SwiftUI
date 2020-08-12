@@ -4,19 +4,9 @@
 
 ![](header.png)
 
-## Installation
+## 프로젝트 목표
 
-OS X & Linux:
-
-```sh
-npm install my-crazy-module --save
-```
-
-Windows:
-
-```sh
-edit autoexec.bat
-```
+#### 증강현실 기술을 활용하여 사용자에게 다양한 시각적인 정보를 제공하는 캠퍼스 탐방 및 스탬프 투어 어플리케이션 개발한다
 
 ## Usage example
 
