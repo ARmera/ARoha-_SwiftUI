@@ -10,26 +10,22 @@
 
 #### 증강현실 기술을 활용하여 사용자에게 다양한 시각적인 정보를 제공하는 캠퍼스 탐방 및 스탬프 투어 어플리케이션 개발한다
 
-## 개발 환경 구성
-
-- CocoaPods 1.9.3
-   * pod 'ARCL'
-   * pod 'AlamoFire'
-   * pod 'CocoaLumberjack/Swift'
 
 ## Development setup
 
 * Cocoapod 1.9.3 
-* ARCL '1.3.1'
-* AlamoFire '5.2.2'
-* CocoaLumberjack/Swift 
 
-```sh
-- CocoaPods 1.9.3
-   * pod 'ARCL'
-   * pod 'AlamoFire'
-   * pod 'CocoaLumberjack/Swift'
-pod install
+#### CocoaPods
+
+```ruby
+platform :ios, '9.0'
+
+target 'SampleTarget' do
+  use_frameworks!
+  pod 'CocoaLumberjack/Swift'
+  pod 'ARCL'
+  pod 'AlamoFire'
+end
 ```
 
 ## Release History
