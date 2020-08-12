@@ -6,16 +6,14 @@
 ![Pod License](https://img.shields.io/badge/License-MIT-blue)
 ![Swift Version](https://img.shields.io/badge/Swift-5.1-blueviolet)
 
-## 프로젝트 목표
+## Project Goal
 
 #### 증강현실 기술을 활용하여 사용자에게 다양한 시각적인 정보를 제공하는 캠퍼스 탐방 및 스탬프 투어 어플리케이션 개발한다
 
 
 ## Development setup
 
-* Cocoapod 1.9.3 
-
-#### CocoaPods
+#### CocoaPods 1.9.3
 
 ```ruby
 platform :ios, '9.0'
