@@ -12,26 +12,34 @@ import MapKit
 import Alamofire
 
 class UserSettings:ObservableObject{
+    //isLogin : 로그인 여부
     @Published var isLogin = false;
+    //tabselected : 탭 선택(1번 탭,2번탭,3번 탭,4번 탭)
     @Published var tabselected = 0;
+    //test : $$삭제 예정$$
     @Published var test:UIImage = UIImage()
+    //currentRouteList : 현재 route의 Point의 coordinates 배열
     @Published var currentRouteList:[Pos] = [Pos](){
         didSet{
             print(currentRouteList)
         }
     }
+    //currentRouteProperties : 현재 route의 Point의 properties(turntype) 배열
     @Published var currentRouteProperties:[[String:Any]] = [[String:Any]](){
         didSet{
             print(currentRouteProperties)
         }
     }
     
+    
     func requestRoute(start:CLLocationCoordinate2D,dest:CLLocationCoordinate2D){
         let appKey = "3b93e7ea-9bb4-4402-afdb-a96aaab9fa23"
+        
         let header:HTTPHeaders = [
             "Accept" : "application/json",
             "appKey" : appKey
         ]
+        
         let body:[String:String] = [
             "startX" : String(start.longitude),
             "startY" : String(start.latitude),
@@ -40,7 +48,6 @@ class UserSettings:ObservableObject{
             "startName" : "출발지",
             "endName" : "도착지"
         ]
-
         
         AF.request(url.TMapRoute.rawValue,method: .post ,parameters: body,encoding: URLEncoding.default,headers: header)
             .responseData{ response in

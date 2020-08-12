@@ -33,7 +33,7 @@ struct Tab1ContentView:View{
                     }.buttonStyle(PlainButtonStyle()).padding()
                     .simultaneousGesture(TapGesture().onEnded{
                         print("TapGesture")
-                        self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: 37.5396509, longitude: 127.0710501), dest: CLLocationCoordinate2D(latitude:37.5418772, longitude: 127.07602))
+                        self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: 37.54142387, longitude: 127.0706589), dest: CLLocationCoordinate2D(latitude:37.5418772, longitude: 127.07602))
 
                     })
                     

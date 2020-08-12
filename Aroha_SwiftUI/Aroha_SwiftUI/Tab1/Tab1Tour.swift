@@ -16,7 +16,8 @@ struct Tab1TourView : View{
     
     var body:some View{
         VStack{
-            DemoVideoStreaming(log:$log).frame(width: 100, height: 100, alignment: .center)
+            ARSceneViewHolder(log: $log)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
             HStack{
                 Text("현재위치: \(log)").frame(maxWidth: .infinity, alignment: .center)
                 Button(action: {
