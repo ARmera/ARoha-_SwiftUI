@@ -12,6 +12,8 @@ import MapKit
 import Alamofire
 
 class UserSettings:ObservableObject{
+    //scene_instance : scene 관리
+    @Published var scene_instance:SceneLocationView?;
     //isLogin : 로그인 여부
     @Published var isLogin = false;
     //tabselected : 탭 선택(1번 탭,2번탭,3번 탭,4번 탭)

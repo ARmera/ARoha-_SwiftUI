@@ -22,6 +22,13 @@ struct Tab1TourView : View{
                 Text("현재위치: \(log)").frame(maxWidth: .infinity, alignment: .center)
                 Button(action: {
                     print("스탬프 인식")
+                    if let scene = self.settings.scene_instance {
+                        let pic = scene.snapshot()
+                        print("스냅샷 촬영됨")
+                        self.uploadImg(pic)
+                    }else{
+                        print("스냅샷 촬영안됨")
+                    }
                 }){
                     Text("스탬프 인식").foregroundColor(.black)
                         .frame(width : 100,alignment: .trailing)
@@ -39,6 +46,18 @@ struct Tab1TourView : View{
             } else {
                 print("response \(response)")
             }
+        }
+    }
+    private func uploadImg( _ pic:UIImage){ // 이미지 프로세싱 & 식별을 위해 snapshot을 서버로 전송
+        let url = "http://ar.konk.uk:8080/upload" // https 일 경우 오류 발생!
+        let imgData = pic.jpegData(compressionQuality: 0.2)! // compression값이 커질수록 이미지 품질향상.
+        AF.upload(multipartFormData: { multipartFormData in
+        
+        multipartFormData.append(Data("test".utf8), withName: "check")
+        multipartFormData.append(imgData, withName: "image",fileName: "test.jpg", mimeType: "image/jpg")
+
+        }, to: url).responseString { response in
+            print(response)
         }
     }
 }

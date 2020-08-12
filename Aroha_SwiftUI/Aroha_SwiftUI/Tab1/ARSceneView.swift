@@ -18,10 +18,11 @@ struct ARSceneViewHolder: UIViewRepresentable {
     
     //view생성 시 한번만 호출 됨.
     func makeUIView(context: UIViewRepresentableContext<ARSceneViewHolder>) -> SCNView{
+        self.settings.scene_instance = scene
         locationManager.delegate = context.coordinator
         GPSSetting()
         scene.run()
-        return scene;
+        return scene
     }
     
     //부모 uiView가 업데이트 되면 호출 됨.
