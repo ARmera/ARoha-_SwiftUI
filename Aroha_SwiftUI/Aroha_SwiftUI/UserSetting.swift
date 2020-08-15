@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import MapKit
 import Alamofire
-
+import ARCL
 class UserSettings:ObservableObject{
     //scene_instance : scene 관리
     @Published var scene_instance:SceneLocationView?;

@@ -21,6 +21,8 @@ struct ARSceneViewHolder: UIViewRepresentable {
         self.settings.scene_instance = scene
         locationManager.delegate = context.coordinator
         GPSSetting()
+        let initial_coord = locationManager.location?.coordinate
+        showAnimationObject(coordinate: initial_coord!)
         scene.run()
         return scene
     }
@@ -72,7 +74,7 @@ struct ARSceneViewHolder: UIViewRepresentable {
                 parent.log = "latitude" + String(coor.latitude) + "/ longitude" + String(coor.longitude)
             }
         }
-        
+                
         //특정 위치에 AR을 Rendering & 위치에 띄워주는 함수
         func showARObject(index:Int){
             let position = Pos(self.parent.settings.currentRouteList[index].lat, self.parent.settings.currentRouteList[index].lng)
@@ -113,6 +115,20 @@ struct ARSceneViewHolder: UIViewRepresentable {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
+    }
+    
+    func showAnimationObject(coordinate:CLLocationCoordinate2D){
+        let tempScene = SCNScene(named:"KU.dae")!
+        let material = SCNMaterial()
+        let shape = tempScene.rootNode
+        
+        shape.childNode(withName: "model", recursively: true)
+        shape.scale = SCNVector3(3, 3, 3)
+        material.diffuse.contents = UIImage(named : "1")
+        shape.geometry?.firstMaterial = material
+        let locationnode = LocationNode(location: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
+        locationnode.addChildNode(shape)
+        scene.addLocationNodeWithConfirmedLocation(locationNode: locationnode)
     }
 }
 

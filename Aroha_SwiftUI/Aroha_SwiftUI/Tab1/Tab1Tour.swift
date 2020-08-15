@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 import AVFoundation
+import Alamofire
 
 struct Tab1TourView : View{
     @EnvironmentObject var settings:UserSettings
@@ -52,7 +53,7 @@ struct Tab1TourView : View{
         let url = "http://ar.konk.uk:8080/upload" // https 일 경우 오류 발생!
         let imgData = pic.jpegData(compressionQuality: 0.2)! // compression값이 커질수록 이미지 품질향상.
         AF.upload(multipartFormData: { multipartFormData in
-        
+
         multipartFormData.append(Data("test".utf8), withName: "check")
         multipartFormData.append(imgData, withName: "image",fileName: "test.jpg", mimeType: "image/jpg")
 
