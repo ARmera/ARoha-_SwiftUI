@@ -24,6 +24,7 @@ class UserSettings:ObservableObject{
     @Published var currentRouteList:[Pos] = [Pos](){
         didSet{
             print(currentRouteList)
+            print("asfasfsa")
         }
     }
     //currentRouteProperties : 현재 route의 Point의 properties(turntype) 배열
