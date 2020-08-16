@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		280A8F7824E7CC7E00C4AD46 /* materials.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 280A8F7724E7CC7E00C4AD46 /* materials.mtl */; };
 		280A8F8224E7D21000C4AD46 /* KU.dae in Resources */ = {isa = PBXBuildFile; fileRef = 280A8F8124E7D21000C4AD46 /* KU.dae */; };
+		280A8F8424E91EB800C4AD46 /* materials.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 280A8F8324E91EB800C4AD46 /* materials.mtl */; };
 		28247C1C24DE6BE200F89AAA /* Pos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28247C1B24DE6BE200F89AAA /* Pos.swift */; };
 		28468B2124E179B00098AD96 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28468B2024E179B00098AD96 /* HttpRequest.swift */; };
 		28468B2424E188640098AD96 /* Pretreatment .swift in Sources */ = {isa = PBXBuildFile; fileRef = 28468B2324E188640098AD96 /* Pretreatment .swift */; };
@@ -57,8 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		280A8F7724E7CC7E00C4AD46 /* materials.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = materials.mtl; path = "../../../../../Downloads/model_obj_1p_GrdO9nGO_daAxHDC8m6C (1)/materials.mtl"; sourceTree = "<group>"; };
 		280A8F8124E7D21000C4AD46 /* KU.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = KU.dae; sourceTree = "<group>"; };
+		280A8F8324E91EB800C4AD46 /* materials.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = materials.mtl; sourceTree = "<group>"; };
 		28247C1B24DE6BE200F89AAA /* Pos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pos.swift; sourceTree = "<group>"; };
 		28468B2024E179B00098AD96 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		28468B2324E188640098AD96 /* Pretreatment .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pretreatment .swift"; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		28D58F7F24CBEF8B0089C134 /* Aroha_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				280A8F7724E7CC7E00C4AD46 /* materials.mtl */,
+				280A8F8324E91EB800C4AD46 /* materials.mtl */,
 				280A8F8124E7D21000C4AD46 /* KU.dae */,
 				28D58FB624CC02DF0089C134 /* UserSetting.swift */,
 				28D58F8024CBEF8B0089C134 /* AppDelegate.swift */,
@@ -409,7 +409,7 @@
 				280A8F8224E7D21000C4AD46 /* KU.dae in Resources */,
 				28D58F8D24CBEF8D0089C134 /* LaunchScreen.storyboard in Resources */,
 				28D58F8A24CBEF8D0089C134 /* Preview Assets.xcassets in Resources */,
-				280A8F7824E7CC7E00C4AD46 /* materials.mtl in Resources */,
+				280A8F8424E91EB800C4AD46 /* materials.mtl in Resources */,
 				28D58F8724CBEF8D0089C134 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
