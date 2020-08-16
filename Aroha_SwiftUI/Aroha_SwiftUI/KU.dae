@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2020-08-15T09:45:01Z</created>
-  <modified>2020-08-15T09:45:01Z</modified>
+  <created>2020-08-16T02:48:28Z</created>
+  <modified>2020-08-16T02:48:28Z</modified>
   <unit meter="0.010000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -661,18 +661,6 @@
   <material id="mat13mat" name="mat13mat">
    <instance_effect url="#effect_mat13mat"/>
   </material>
-  <material id="mat19mat" name="mat19mat">
-   <instance_effect url="#effect_mat19mat"/>
-  </material>
-  <material id="mat20mat" name="mat20mat">
-   <instance_effect url="#effect_mat20mat"/>
-  </material>
-  <material id="mat21mat" name="mat21mat">
-   <instance_effect url="#effect_mat21mat"/>
-  </material>
-  <material id="mat23mat" name="mat23mat">
-   <instance_effect url="#effect_mat23mat"/>
-  </material>
  </library_materials>
  <library_effects>
   <effect id="effect_mat13mat">
@@ -684,146 +672,6 @@
       </ambient>
       <diffuse>
        <color>1 0.6 0 1</color>
-      </diffuse>
-      <specular>
-       <color>0 0 0 1</color>
-      </specular>
-      <shininess>
-       <float>20</float>
-      </shininess>
-      <transparent opaque="RGB_ZERO">
-       <color>0 0 0 1</color>
-      </transparent>
-      <transparency>
-       <float>0</float>
-      </transparency>
-      <index_of_refraction>
-       <float>1</float>
-      </index_of_refraction>
-     </phong>
-    </technique>
-   </profile_COMMON>
-   <extra>
-    <technique profile="SceneKit">
-     <litPerPixel>1</litPerPixel>
-     <ambient_diffuse_lock>1</ambient_diffuse_lock>
-    </technique>
-   </extra>
-  </effect>
-  <effect id="effect_mat19mat">
-   <profile_COMMON>
-    <technique sid="common">
-     <phong>
-      <ambient>
-       <color>0.87 0.6 0.27 1</color>
-      </ambient>
-      <diffuse>
-       <color>0.87 0.6 0.27 1</color>
-      </diffuse>
-      <specular>
-       <color>0 0 0 1</color>
-      </specular>
-      <shininess>
-       <float>20</float>
-      </shininess>
-      <transparent opaque="RGB_ZERO">
-       <color>0 0 0 1</color>
-      </transparent>
-      <transparency>
-       <float>0</float>
-      </transparency>
-      <index_of_refraction>
-       <float>1</float>
-      </index_of_refraction>
-     </phong>
-    </technique>
-   </profile_COMMON>
-   <extra>
-    <technique profile="SceneKit">
-     <litPerPixel>1</litPerPixel>
-     <ambient_diffuse_lock>1</ambient_diffuse_lock>
-    </technique>
-   </extra>
-  </effect>
-  <effect id="effect_mat20mat">
-   <profile_COMMON>
-    <technique sid="common">
-     <phong>
-      <ambient>
-       <color>0.47 0.33 0.28 1</color>
-      </ambient>
-      <diffuse>
-       <color>0.47 0.33 0.28 1</color>
-      </diffuse>
-      <specular>
-       <color>0 0 0 1</color>
-      </specular>
-      <shininess>
-       <float>20</float>
-      </shininess>
-      <transparent opaque="RGB_ZERO">
-       <color>0 0 0 1</color>
-      </transparent>
-      <transparency>
-       <float>0</float>
-      </transparency>
-      <index_of_refraction>
-       <float>1</float>
-      </index_of_refraction>
-     </phong>
-    </technique>
-   </profile_COMMON>
-   <extra>
-    <technique profile="SceneKit">
-     <litPerPixel>1</litPerPixel>
-     <ambient_diffuse_lock>1</ambient_diffuse_lock>
-    </technique>
-   </extra>
-  </effect>
-  <effect id="effect_mat21mat">
-   <profile_COMMON>
-    <technique sid="common">
-     <phong>
-      <ambient>
-       <color>1 1 1 1</color>
-      </ambient>
-      <diffuse>
-       <color>1 1 1 1</color>
-      </diffuse>
-      <specular>
-       <color>0 0 0 1</color>
-      </specular>
-      <shininess>
-       <float>20</float>
-      </shininess>
-      <transparent opaque="RGB_ZERO">
-       <color>0 0 0 1</color>
-      </transparent>
-      <transparency>
-       <float>0</float>
-      </transparency>
-      <index_of_refraction>
-       <float>1</float>
-      </index_of_refraction>
-     </phong>
-    </technique>
-   </profile_COMMON>
-   <extra>
-    <technique profile="SceneKit">
-     <litPerPixel>1</litPerPixel>
-     <ambient_diffuse_lock>1</ambient_diffuse_lock>
-    </technique>
-   </extra>
-  </effect>
-  <effect id="effect_mat23mat">
-   <profile_COMMON>
-    <technique sid="common">
-     <phong>
-      <ambient>
-       <color>0.1 0.1 0.1 1</color>
-      </ambient>
-      <diffuse>
-       <color>0.1 0.1 0.1 1</color>
       </diffuse>
       <specular>
        <color>0 0 0 1</color>
@@ -954,10 +802,10 @@
      <bind_material>
       <technique_common>
        <instance_material symbol="geometryElement172" target="#mat13mat"/>
-       <instance_material symbol="geometryElement173" target="#mat19mat"/>
-       <instance_material symbol="geometryElement174" target="#mat20mat"/>
-       <instance_material symbol="geometryElement175" target="#mat21mat"/>
-       <instance_material symbol="geometryElement176" target="#mat23mat"/>
+       <instance_material symbol="geometryElement173" target="#mat13mat"/>
+       <instance_material symbol="geometryElement174" target="#mat13mat"/>
+       <instance_material symbol="geometryElement175" target="#mat13mat"/>
+       <instance_material symbol="geometryElement176" target="#mat13mat"/>
       </technique_common>
      </bind_material>
     </instance_controller>

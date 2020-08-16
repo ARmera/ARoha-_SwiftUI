@@ -23,8 +23,7 @@ class UserSettings:ObservableObject{
     //currentRouteList : 현재 route의 Point의 coordinates 배열
     @Published var currentRouteList:[Pos] = [Pos](){
         didSet{
-            print(currentRouteList)
-            print("asfasfsa")
+            
         }
     }
     //currentRouteProperties : 현재 route의 Point의 properties(turntype) 배열
@@ -33,6 +32,7 @@ class UserSettings:ObservableObject{
             print(currentRouteProperties)
         }
     }
+    
     
     
     func requestRoute(start:CLLocationCoordinate2D,dest:CLLocationCoordinate2D){

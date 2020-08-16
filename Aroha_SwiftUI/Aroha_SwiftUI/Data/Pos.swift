@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class Pos { // 좌표 class
     var lat:Double
@@ -31,8 +32,28 @@ class Pos { // 좌표 class
         let Δλ = (pos.lng - self.lng) * Double.pi / 180;
         let a = sin(Δφ / 2) * sin(Δφ / 2) + cos(φ1) * cos(φ2) * sin(Δλ / 2) * sin(Δλ / 2);
         let c = 2 * atan2(sqrt(a), sqrt(1 - a));
-        print(String("결과: "),abs(R * c))// in metres
         return abs(R*c)
     }
+    
+    func degreesToRadians(degrees: Double) -> Double { return degrees * .pi / 180.0 }
+    func radiansToDegrees(radians: Double) -> Double { return radians * 180.0 / .pi }
+
+    func getBearingBetweenTwoPoints1(point2 : Pos) -> Double {
+
+        let lat1 = degreesToRadians(degrees: self.lat)
+        let lon1 = degreesToRadians(degrees: self.lng)
+
+        let lat2 = degreesToRadians(degrees: point2.lat)
+        let lon2 = degreesToRadians(degrees: point2.lng)
+
+        let dLon = lon2 - lon1
+
+        let y = sin(dLon) * cos(lat2)
+        let x = cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(dLon)
+        let radiansBearing = atan2(y, x)
+
+        return radiansToDegrees(radians: radiansBearing)
+    }
+
     
 }
