@@ -30,13 +30,12 @@ struct Tab1ContentView:View{
                         RoundedRectangle(cornerRadius: 16)
                             .stroke(Color.blue, lineWidth: 4)
                     )
-                    }.buttonStyle(PlainButtonStyle()).padding()
+                }.buttonStyle(PlainButtonStyle()).padding()
                     .simultaneousGesture(TapGesture().onEnded{
                         print("TapGesture")
-                        self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: 37.7839516, longitude: 126.9890118), dest: CLLocationCoordinate2D(latitude:37.539097, longitude: 127.074711))
-
+                        self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: 37.5424107, longitude: 127.0765058), dest: CLLocationCoordinate2D(latitude:37.531544, longitude: 127.0645193))
                     })
-                    
+                
                 //cancel the tour
                 NavigationLink(destination: Tab2MainView()){
                     Text("투어 취소하기").padding().overlay(

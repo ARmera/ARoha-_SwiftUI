@@ -16,9 +16,9 @@ struct ARSceneViewHolder: UIViewRepresentable {
     var scene = SceneLocationView()
     var locationManager = CLLocationManager()
     var correctDirectionGuide = SCNNode()
-    @State var correctDirectionGuidetext = UITextView()
     @EnvironmentObject var settings:UserSettings
     @Binding var log:String
+    @Binding var showDirection:[Bool]
     
     //view생성 시 한번만 호출 됨.
     func makeUIView(context: UIViewRepresentableContext<ARSceneViewHolder>) -> SCNView{
@@ -27,8 +27,6 @@ struct ARSceneViewHolder: UIViewRepresentable {
         locationManager.delegate = context.coordinator
         GPSSetting()
         scene.run()
-        
-
         return scene
     }
     
@@ -55,7 +53,7 @@ struct ARSceneViewHolder: UIViewRepresentable {
             self.parent = parent
             txtSCN.firstMaterial?.diffuse.contents = UIColor.black
             txtSCN.firstMaterial?.diffuse.contents = UIFont(name: "HelveticaNeue-Medium", size: 30)
-            self.parent.scene.addSubview(self.parent.correctDirectionGuidetext)
+            
         }
         
         // 디바이스의 head를 움직일때마다 호출
@@ -63,30 +61,26 @@ struct ARSceneViewHolder: UIViewRepresentable {
             
             if self.parent.settings.currentRouteList.count == 0 {return}
             
-            print("newHeadingTrueHeading : \(newHeading.trueHeading)")
-            print("현재 위치 : \(self.parent.locationManager.location!.coordinate)")
             let current = self.parent.locationManager.location!.coordinate
             let current_pos = Pos(current.latitude, current.longitude)
             let compare = newHeading.trueHeading - 360;
-            print(compare - current_pos.getBearingBetweenTwoPoints1(point2: self.parent.settings.currentRouteList[0]))
-            if abs(compare - current_pos.getBearingBetweenTwoPoints1(point2: self.parent.settings.currentRouteList[0])) <= 20.0{
-                print("closed")
-                self.parent.correctDirectionGuidetext = UITextView(frame: CGRect(x: 0, y: 0, width: 100, height: 100));
-                self.parent.correctDirectionGuidetext.text = "적절한 위치입니다!"
-                self.parent.scene.addSubview(self.parent.correctDirectionGuidetext)
+     
+            //적절한 위치입니다.
+            if abs(compare - current_pos.getBearingBetweenTwoPoints1(point2: self.parent.settings.currentRouteList[sign_num])) <= 20.0{
+                self.parent.showDirection[0] = false
+                self.parent.showDirection[1] = false
             }
             else{
-                if(compare - current_pos.getBearingBetweenTwoPoints1(point2: self.parent.settings.currentRouteList[0]) > 0){
-                    print("왼쪽으로 이동")
-                    self.parent.correctDirectionGuidetext = UITextView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-                    self.parent.correctDirectionGuidetext.text = "왼쪽으로 카메라를 이동하세요!"
+                //오른쪽
+                if(abs(compare - current_pos.getBearingBetweenTwoPoints1(point2: self.parent.settings.currentRouteList[sign_num])) > 180){
+                    self.parent.showDirection[0] = false
+                    self.parent.showDirection[1] = true
                 }
+                //왼쪽
                 else{
-                    print("오른쪽으로 이동")
-                    self.parent.correctDirectionGuidetext = UITextView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-                    self.parent.correctDirectionGuidetext.text = "오른쪽으로 카메라를 이동하세요!"
+                    self.parent.showDirection[0] = true
+                    self.parent.showDirection[1] = false
                 }
-                self.parent.scene.addSubview(self.parent.correctDirectionGuidetext)
             }
             
         }
@@ -95,11 +89,13 @@ struct ARSceneViewHolder: UIViewRepresentable {
             if let coor = manager.location?.coordinate{
                 //asyn로 routeList가 전달되지 않았으면
                 if self.parent.settings.currentRouteList.count == 0 {return}
+                //크기 업데이트
+                
                 
                 //initial rendering
                 if self.sign_num == 0{
                     print("initial rendering")
-                    showARObject(index: 0)
+                    //showARObject(index: 0)
                     showARObject(index: 1)
                     sign_num = 1
                 }
@@ -108,6 +104,19 @@ struct ARSceneViewHolder: UIViewRepresentable {
                 let sign = self.parent.settings.currentRouteList[sign_num]
                 //내 거리와 표지판 사이의 거리
                 let distance = sign.calcDistance(pos: Pos(coor.latitude, coor.longitude))
+                
+                //크기 업데이트
+//                let current_nodes = self.parent.scene.sceneNode?.parent?.childNodes
+//
+//                for item in current_nodes!{
+//                    var scale = 0
+//                    if distance == 0 {scale = 15}
+//                    else {scale = 15/Int(distance)}
+//                    if scale <= 5 {scale = 10}
+//                    item.scale = SCNVector3(scale,scale,scale)
+//                }
+                
+                
                 if distance <= 3 && sign_num<self.parent.settings.currentRouteList.count-1{
                     sign_num += 1
                     showARObject(index: sign_num)
@@ -125,7 +134,7 @@ struct ARSceneViewHolder: UIViewRepresentable {
             let turntype = self.parent.settings.currentRouteProperties[index]["turnType"] as! Int
             print("turntype : \(turntype)")
             
-            let locationNode = LocationNode(location: CLLocation(coordinate: CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng), altitude: 100))
+            let locationNode = LocationNode(location: CLLocation(coordinate: CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng), altitude: 10))
             let rotate = simd_float4x4(SCNMatrix4MakeRotation(self.parent.scene.session.currentFrame!.camera.eulerAngles.y, 0, 1, 0))
             let rotateTransform = simd_mul(locationNode.simdWorldTransform,rotate)
 
@@ -137,9 +146,9 @@ struct ARSceneViewHolder: UIViewRepresentable {
             locationNode.transform = SCNMatrix4(rotateTransform)
             
             //Polyline
-            let next_position = Pos(self.parent.settings.currentRouteList[index+1].lat, self.parent.settings.currentRouteList[index+1].lng)
-            
-            self.parent.addPolyline(polyline_pos: [CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng),CLLocationCoordinate2D(latitude: next_position.lat, longitude: next_position.lng)])
+//            let next_position = Pos(self.parent.settings.currentRouteList[index+1].lat, self.parent.settings.currentRouteList[index+1].lng)
+//
+//            self.parent.addPolyline(polyline_pos: [CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng),CLLocationCoordinate2D(latitude: next_position.lat, longitude: next_position.lng)])
             
             self.parent.scene.addLocationNodeWithConfirmedLocation(locationNode: locationNode)
             self.parent.scene.autoenablesDefaultLighting = true
@@ -165,7 +174,7 @@ struct ARSceneViewHolder: UIViewRepresentable {
         let material = SCNMaterial()
         let shape = tempScene.rootNode
         shape.childNode(withName: "model", recursively: true)
-        shape.scale = SCNVector3(15, 15, 15)
+        shape.scale = SCNVector3(7, 7, 7)
         shape.position = SCNVector3(0,-50,0);
         material.diffuse.contents = UIImage(named : "1")
         shape.geometry?.firstMaterial = material
@@ -174,8 +183,8 @@ struct ARSceneViewHolder: UIViewRepresentable {
     
     //표지판 만들어줌
     func makeSigneNode(turntype: Int) -> SCNNode{
-        let plane = SCNPlane(width: 150.0 , height: 150.0)
-        let image = UIImage(named: "\(turntype)")
+        let plane = SCNPlane(width: 50.0 , height: 50.0)
+        let image = UIImage(named: "\(turntype)")?.resizableImage(withCapInsets: .zero, resizingMode: .stretch)
         let material = SCNMaterial()
         material.locksAmbientWithDiffuse = true
         material.isDoubleSided = false
