@@ -95,7 +95,7 @@ struct Popupview:View{
         VStack{
             Text("스탬프 획득").font(Font.custom("HelveticaNeue-Bold", size: 10))
                 .padding(.horizontal, 10)
-            StampImageView(withURL: url.ImageSource.rawValue + String(2))
+            StampImageView(withURL: URLRoot.ImageSource.rawValue + String(2))
         }.onTapGesture {
             self.showPopup = false
         }

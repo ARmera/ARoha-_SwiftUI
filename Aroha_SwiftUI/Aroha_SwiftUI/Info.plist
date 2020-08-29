@@ -66,11 +66,20 @@
 
 </string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>location description.</string>
+	<string>Shows your location on the map and helps improve the map.
+</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoicmxhdDMwMiIsImEiOiJja2U1Y21sbncwN2l5MnluNW1jcjMxZnlxIn0.Ia0j9zrSBmiPvyJUFtkpiA</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BMJUA_ttf.ttf</string>
+		<string>BMJUA_otf.otf</string>
+		<string>Spoqa Han Sans Regular.ttf</string>
+	</array>
 </dict>
 </plist>

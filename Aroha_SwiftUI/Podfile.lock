@@ -4,23 +4,31 @@ PODS:
   - CocoaLumberjack/Core (3.6.2)
   - CocoaLumberjack/Swift (3.6.2):
     - CocoaLumberjack/Core
+  - Mapbox-iOS-SDK (5.9.0):
+    - MapboxMobileEvents (= 0.10.2)
+  - MapboxMobileEvents (0.10.2)
 
 DEPENDENCIES:
   - Alamofire
   - ARCL
   - CocoaLumberjack/Swift
+  - Mapbox-iOS-SDK (~> 5.9.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - ARCL
     - CocoaLumberjack
+    - Mapbox-iOS-SDK
+    - MapboxMobileEvents
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   ARCL: db48b6927d6f3f49f29568295ed91c94ab8d4aab
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
+  Mapbox-iOS-SDK: a5915700ec84bc1a7f8b3e746d474789e35b7956
+  MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
 
-PODFILE CHECKSUM: eae9b6b6ac967ed387efd7c5baf5b5b793a183fb
+PODFILE CHECKSUM: f1128c2d6db5bdd5f9947ebf4da7128b48cabcfb
 
 COCOAPODS: 1.9.3

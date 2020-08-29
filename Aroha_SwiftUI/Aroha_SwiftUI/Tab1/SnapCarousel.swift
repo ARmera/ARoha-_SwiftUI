@@ -11,19 +11,13 @@ import SwiftUI
 
 struct SnapCarousel: View {
     var UIState: UIStateModel
-    
+    @Binding var items:[BeaconInfo]
     var body: some View
     {
         let spacing:            CGFloat = 40
         let widthOfHiddenCards: CGFloat = 40    // UIScreen.main.bounds.width - 10
         let cardHeight:         CGFloat = 200
         
-        let items = [
-            Card( id: 0, name: "Hey" ),
-            Card( id: 1, name: "Ho" ),
-            Card( id: 2, name: "Lets" ),
-            Card( id: 3, name: "Go" )
-        ]
         
         return  Canvas
             {
@@ -32,18 +26,25 @@ struct SnapCarousel: View {
                 //
                 Carousel( numberOfItems: CGFloat( items.count ), spacing: spacing, widthOfHiddenCards: widthOfHiddenCards )
                 {
-                    ForEach( items, id: \.self.id ) { item in
-                        Item( _id:                  Int(item.id),
+                    ForEach( items, id: \.self.index ) { item in
+                        Item( _id:                  Int((item as BeaconInfo).index),
                               spacing:              spacing,
                               widthOfHiddenCards:   widthOfHiddenCards,
                               cardHeight:           cardHeight )
                         {
-                            Text("\(item.name)")
+                            VStack{
+                                Text("\((item as BeaconInfo).title)")                    .font(Font.custom("BMJUA", size: 20))
+
+                                Text("\((item as BeaconInfo).description)")
+                                .font(Font.custom("SpoqaHanSans-Regular", size: 10))
+
+
+                            }
                         }
                         .foregroundColor( Color.black )
-                        .background( Color.red )
+                        .background( Color("Primary") )
                         .cornerRadius( 8 )
-                        .shadow( color: Color( "shadow1" ), radius: 4, x: 0, y: 4 )
+                        .shadow( color: Color( "Blue200" ), radius: 4, x: 0, y: 4 )
                         .transition( AnyTransition.slide )
                         .animation( .spring() )
                     }
@@ -185,9 +186,3 @@ struct Item<Content: View>: View {
 }
 
 
-
-struct SnapCarousel_Previews: PreviewProvider {
-    static var previews: some View {
-        SnapCarousel(UIState: UIStateModel())
-    }
-}
