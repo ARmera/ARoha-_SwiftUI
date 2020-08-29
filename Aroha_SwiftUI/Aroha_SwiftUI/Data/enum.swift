@@ -9,11 +9,17 @@
 import Foundation
 import MapKit
 
-enum url:String{
+
+enum URLRoot:String{
     case TMapRoute = "https://apis.openapi.sk.com/tmap/routes/pedestrian?version=1&format=json&callback=result"
     case ImageSource = "http://api.ar.konk.uk/image/"
+    case DataRoot = "http://api.ar.konk.uk/"
+
 }
 
-enum turnType:String{
-    case right = ""
+enum tabMenu:Int{
+    case CamputTourTab1 = 0
+    case TourLocationTab2 = 1
+    case StampTab3 = 2
+    case MyPageTab4 = 3
 }

@@ -11,6 +11,11 @@ import SwiftUI
 import MapKit
 import Alamofire
 import ARCL
+
+let screenWidth = UIScreen.main.bounds.size.width
+let screenHeight = UIScreen.main.bounds.size.height
+
+
 class UserSettings:ObservableObject{
     //scene_instance : scene 관리
     @Published var scene_instance:SceneLocationView?;
@@ -18,8 +23,6 @@ class UserSettings:ObservableObject{
     @Published var isLogin = false;
     //tabselected : 탭 선택(1번 탭,2번탭,3번 탭,4번 탭)
     @Published var tabselected = 0;
-    //test : $$삭제 예정$$
-    @Published var test:UIImage = UIImage()
     //currentRouteList : 현재 route의 Point의 coordinates 배열
     @Published var currentRouteList:[Pos] = [Pos](){
         didSet{
@@ -32,6 +35,11 @@ class UserSettings:ObservableObject{
             print(currentRouteProperties)
         }
     }
+    
+    //AllRouteInfo : 서버에서 가져오는 모든 Route, Ex) 1번(윤경로 경로),2번(자연 경로),3번 기타 등등
+    @Published var AllRouteInfo:[RouteInfo] = [RouteInfo]()
+    //UserSelected : 현재 선택된 route 혹은 beacon
+    @Published var UserSelected:String = "선택해주세요!"
     
     
     
@@ -52,7 +60,7 @@ class UserSettings:ObservableObject{
             "endName" : "도착지"
         ]
         
-        AF.request(url.TMapRoute.rawValue,method: .post ,parameters: body,encoding: URLEncoding.default,headers: header)
+        AF.request(URLRoot.TMapRoute.rawValue,method: .post ,parameters: body,encoding: URLEncoding.default,headers: header)
             .responseData{ response in
                 switch response.result{
                 case .success(let value):
@@ -65,12 +73,4 @@ class UserSettings:ObservableObject{
         }
     }
 }
-
-enum tabMenu:Int{
-    case CamputTourTab1 = 0
-    case TourLocationTab2 = 1
-    case StampTab3 = 2
-    case MyPageTab4 = 3
-}
-
 
