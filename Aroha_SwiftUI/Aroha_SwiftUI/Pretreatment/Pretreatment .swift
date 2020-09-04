@@ -34,7 +34,7 @@ func convertBeaconSummary2Anno(beaconinfos:[BeaconSummaryInfo])->[CustomPointAnn
     for item in beaconinfos{
         let title = item.title
         let coord = CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)
-        ret.append(CustomPointAnnotation(coordinate: coord, title: title))
+        ret.append(CustomPointAnnotation(coordinate: coord, title: title, index: -1))
     }
     return ret;
 }
@@ -44,9 +44,32 @@ func convertBeacon2Anno(beaconinfos:[BeaconInfo])->[CustomPointAnnotation]{
     for item in beaconinfos{
         let title = item.title
         let coord = CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)
-        ret.append(CustomPointAnnotation(coordinate: coord, title: title))
+        ret.append(CustomPointAnnotation(coordinate: coord, title: title, index: item.index))
     }
     return ret;
+}
+
+func convertTitle2Img(kor:String)->String{
+    switch kor {
+    case "수의학관":
+        return "animal"
+    case "공학관":
+        return "engineering"
+    case "인문학관":
+        return "accademy"
+    case "입학정보관":
+        return "architecture"
+    case "이과대학":
+        return "art"
+    case "신공학관":
+        return "business"
+    case "와우도":
+        return "commerce"
+    case "황소상":
+        return "craft"
+    default:
+        return "ecampus"
+    }
 }
 
 extension Double {

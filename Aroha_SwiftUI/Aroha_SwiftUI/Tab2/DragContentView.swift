@@ -190,7 +190,7 @@ struct SearchResultRow: View {
         .onTapGesture {
             self.position = self.screenHeight - 200;
             self.viewModel.search.removeAll()
-            self.settings.RouteAnnotations = [CustomPointAnnotation(coordinate : CLLocationCoordinate2D(latitude: self.item.latitude, longitude: self.item.longitude), title: self.item.title)]
+            self.settings.RouteAnnotations = [CustomPointAnnotation(coordinate : CLLocationCoordinate2D(latitude: self.item.latitude, longitude: self.item.longitude), title: self.item.title, index: self.item.index)]
             //키보드 숨기기
             UIApplication.shared.endEditing()
         }

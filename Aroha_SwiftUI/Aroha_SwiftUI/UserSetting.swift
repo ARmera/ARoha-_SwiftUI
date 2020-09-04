@@ -47,7 +47,8 @@ class UserSettings:ObservableObject{
     @Published var RouteBeaconList:[BeaconInfo] = [BeaconInfo]()
     //RouteAnnotations : 현재 선택된 route의 annotation
     @Published var RouteAnnotations:[CustomPointAnnotation] = [CustomPointAnnotation]()
-    
+    //UserGetStamp : 현재 선택된 User가 얻은 스탬프 목록
+    @Published var UserGetStamp:[String] = ["craft"]
     
     
     func requestRoute(start:CLLocationCoordinate2D,dest:CLLocationCoordinate2D){

@@ -13,6 +13,8 @@
 		280A8F8624EA6E8E00C4AD46 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A8F8524EA6E8E00C4AD46 /* ImageLoader.swift */; };
 		280A8F8824EA6FAE00C4AD46 /* StampImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A8F8724EA6FAE00C4AD46 /* StampImageView.swift */; };
 		28247C1C24DE6BE200F89AAA /* Pos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28247C1B24DE6BE200F89AAA /* Pos.swift */; };
+		2844017925025BFD0055DB47 /* BeaconDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844017825025BFD0055DB47 /* BeaconDetailView.swift */; };
+		2844017B25027D260055DB47 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844017A25027D250055DB47 /* GridLayout.swift */; };
 		28468B2124E179B00098AD96 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28468B2024E179B00098AD96 /* HttpRequest.swift */; };
 		28468B2424E188640098AD96 /* Pretreatment .swift in Sources */ = {isa = PBXBuildFile; fileRef = 28468B2324E188640098AD96 /* Pretreatment .swift */; };
 		284D9D9624F106F00090E35C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D9D9524F106F00090E35C /* MapView.swift */; };
@@ -75,6 +77,8 @@
 		280A8F8524EA6E8E00C4AD46 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		280A8F8724EA6FAE00C4AD46 /* StampImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampImageView.swift; sourceTree = "<group>"; };
 		28247C1B24DE6BE200F89AAA /* Pos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pos.swift; sourceTree = "<group>"; };
+		2844017825025BFD0055DB47 /* BeaconDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconDetailView.swift; sourceTree = "<group>"; };
+		2844017A25027D250055DB47 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		28468B2024E179B00098AD96 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		28468B2324E188640098AD96 /* Pretreatment .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pretreatment .swift"; sourceTree = "<group>"; };
 		284D9D9524F106F00090E35C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 				288173C424FA162300EBA564 /* DragOverCardView.swift */,
 				288173C624FA163900EBA564 /* DragContentView.swift */,
 				28E2BD3724FA99C10018F8A3 /* SearchSheetView.swift */,
+				2844017825025BFD0055DB47 /* BeaconDetailView.swift */,
 			);
 			path = Tab2;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				28D58FC824CC0E700089C134 /* Tab3Main.swift */,
+				2844017A25027D250055DB47 /* GridLayout.swift */,
 			);
 			path = Tab3;
 			sourceTree = "<group>";
@@ -615,9 +621,11 @@
 				28D58FC224CC0DBF0089C134 /* Tab1Main.swift in Sources */,
 				280A8F8824EA6FAE00C4AD46 /* StampImageView.swift in Sources */,
 				28CDF7EE24CC211E000EF9E9 /* Tab1SelectRoute.swift in Sources */,
+				2844017B25027D260055DB47 /* GridLayout.swift in Sources */,
 				28D58FB724CC02DF0089C134 /* UserSetting.swift in Sources */,
 				280A8F8624EA6E8E00C4AD46 /* ImageLoader.swift in Sources */,
 				28D58F8524CBEF8B0089C134 /* ContentView.swift in Sources */,
+				2844017925025BFD0055DB47 /* BeaconDetailView.swift in Sources */,
 				28D58FC924CC0E700089C134 /* Tab3Main.swift in Sources */,
 				28D58FC724CC0E650089C134 /* Tab2Main.swift in Sources */,
 				28468B2424E188640098AD96 /* Pretreatment .swift in Sources */,
