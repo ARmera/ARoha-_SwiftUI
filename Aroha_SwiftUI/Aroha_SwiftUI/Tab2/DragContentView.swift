@@ -8,6 +8,8 @@
 
 import Foundation
 import SwiftUI
+import Mapbox
+
 final class DragContentViewModel: ObservableObject {
     //Observable Variable
     @Published var searchQureyResult:Bool = false
@@ -16,9 +18,7 @@ final class DragContentViewModel: ObservableObject {
             self.searchQureyResult = true
         }
     }
-    @Published var isSelected = false
-    @Published var currentPlaceName = ""
-    @Published var selectedPOIId:String = ""
+    @Published var currentBeaconName = ""
     
 }
 
@@ -45,16 +45,17 @@ struct SearchTitleView: View{
     var body:some View{
         HStack {
             Button(action: {
+                self.settings.RouteAnnotations = convertBeacon2Anno(beaconinfos: self.settings.RouteBeaconList)
             })
             {
-                Image(systemName:"tray.2.fill").foregroundColor(Color("Primary"))
+                Image(systemName:"arrowshape.turn.up.left.2.fill").foregroundColor(Color("Primary"))
                     .padding(.trailing,10)
             }
             Spacer();
             Button(action:{
                 self.showSearchRouteView.toggle()
             }){
-                Text("\(self.settings.UserSelected)")
+                Text("\(self.settings.UserSelectedRoute)")
                     .font(Font.custom("BMJUA", size: 20))
                     .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                 Image(systemName: "square.and.pencil")
@@ -95,11 +96,106 @@ struct BeaconSearchView:View{
             Divider()
             Spacer().frame(height:20)
             
-//            if self.viewmodel.searchQureyResult { SearchQueryResultView(query: self.$viewmodel.search, position: self.$position) }
+            SearchQueryResultView(query: self.$viewmodel.search, position: self.$position)
             
         }.foregroundColor(Color.gray)
     }
 }
 
+// 검색 결과가 표기되는 검색 결과 뷰
+struct SearchQueryResultView: View {
+    
+    @Binding var query:String
+    @Binding var position:CGFloat
+    
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
+    
+    @EnvironmentObject var settings: UserSettings
+    @ObservedObject var viewmodel = DragContentViewModel()
+    
+    var body: some View {
+        
+        //검색 결과
+        VStack{
+            
+            HStack{
+                if self.query.count == 0 {
+                    Image("pin")
+                    Text("루트 내 모든 비콘 리스트")
+                        .font(Font.custom("SpoqaHanSans-Regular", size: 14))
+                }
+                else{
+                    Text("검색결과 ")
+                        .font(Font.custom("SpoqaHanSans-Regular", size: 14))
+                        .foregroundColor(Color.black)
+                    Text("""
+                        \(self.settings.RouteBeaconList.filter{ "\($0)".localizedCaseInsensitiveContains(self.query.trimmingCharacters(in: .whitespacesAndNewlines))
+                        }.count) 건
+                        """)
+                        .font(Font.custom("SpoqaHanSans-Bold", size: 14))
+                        .foregroundColor(Color.blue)
+                }
+                Spacer()
+            }.padding(.leading, 20)
+            
+            
+            if self.query.count == 0 {
+                List(self.settings.RouteBeaconList,id:\.self){ item in
+                    SearchResultRow(position: self.$position, item: item)
+                }.foregroundColor(Color.gray)
+                    .frame(height: screenHeight/3)
+            }
+                
+            else{
+                List(self.settings.RouteBeaconList.filter{ "\($0)".localizedCaseInsensitiveContains(self.query.trimmingCharacters(in: .whitespacesAndNewlines))
+                },id:\.self){ item in
+                    SearchResultRow(position: self.$position, item: item)
+                }.foregroundColor(Color.gray)
+                    .frame(height: screenHeight/3)
+            }
+        }
+        .padding(.horizontal, 10.0)
+        
+    }
+    
+    
+}
+
+struct SearchResultRow: View {
+    let screenHeight = UIScreen.main.bounds.size.height
+    @ObservedObject var viewModel:DragContentViewModel = DragContentViewModel()
+    @EnvironmentObject var settings: UserSettings
+    @Binding var position:CGFloat
+    let screenWidth = UIScreen.main.bounds.size.width
+    var item:BeaconInfo
+    
+    var body:some View {
+        
+        HStack{
+            Image(systemName: "pin.circle").padding(3).foregroundColor(.gray)
+            VStack(alignment: .leading, spacing: 3) {
+                Text("\(item.title)")
+                    .font(Font.custom("SpoqaHanSans-Regular", size: 16))
+                    .foregroundColor(Color.black)
+                Text("\(item.description)")
+                    .font(Font.custom("SpoqaHanSans-Regular", size: 12)).foregroundColor(Color.gray)
+                
+            }.padding(.leading,5)
+                .foregroundColor(Color.gray)
+            
+        }
+        .padding(.vertical, 9)
+        .frame(width : screenWidth-20 ,height:40, alignment: .leading)
+        .onTapGesture {
+            self.position = self.screenHeight - 200;
+            self.viewModel.search.removeAll()
+            self.settings.RouteAnnotations = [CustomPointAnnotation(coordinate : CLLocationCoordinate2D(latitude: self.item.latitude, longitude: self.item.longitude), title: self.item.title)]
+            //키보드 숨기기
+            UIApplication.shared.endEditing()
+        }
+        .padding(5)
+    }
+}
 
 

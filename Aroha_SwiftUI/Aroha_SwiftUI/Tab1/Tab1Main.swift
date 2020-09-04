@@ -16,28 +16,9 @@ struct Tab1MainView:View{
         NavigationView{
             Tab1ContentView()
                 .navigationBarTitle(Text("현재 투어 상태").font(.subheadline), displayMode: .inline)
-        }.onAppear(){
-            self.LoadAllRecomendRoute()
         }
     }
-    /*서버의 모든 루트를 가져오는 함수**/
-    func LoadAllRecomendRoute(){
-        AF.request(APIRoute.route.url(), method: .get).responseData{ response in
-            switch response.result{
-            case .success(let value):
-                do{
-                    self.settings.AllRouteInfo = try JSONDecoder().decode([RouteInfo].self, from: value)
-                    for item in self.settings.AllRouteInfo{
-                        print("AllRouteInfo : \(item)")
-                    }
-                }catch{
-                    print("JSONDecoder().decode DecodingError")
-                }
-            case .failure(let error):
-                print("failure \(error)")
-            }
-        }
-    }
+    
 }
 
 struct Tab1ContentView:View{
@@ -87,7 +68,7 @@ struct SelectRouteView:View{
     @Binding var showSelectedRouteView:Bool
     @Binding var currentBeaconList:[BeaconInfo]
     var body:some View{
-        List(self.settings.AllRouteInfo, id: \.self){ item in
+        List(AllRouteInfo, id: \.self){ item in
             Text("\((item as RouteInfo).title)").onTapGesture {
                 self.showSelectedRouteView.toggle()
                 self.LoadOneRecommedRoute(id: (item as RouteInfo).id)

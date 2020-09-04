@@ -15,6 +15,10 @@ import ARCL
 let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 
+//AllRouteInfo : 서버에서 가져오는 모든 Route, Ex) 1번(윤경로 경로),2번(자연 경로),3번 기타 등등
+var AllRouteInfo:[RouteInfo] = [RouteInfo]()
+//AllBeaconInfo : 서버에서 가져오는 모든 Beacon
+var AllBeaconInfo:[BeaconSummaryInfo] = [BeaconSummaryInfo]()
 
 class UserSettings:ObservableObject{
     //scene_instance : scene 관리
@@ -36,10 +40,13 @@ class UserSettings:ObservableObject{
         }
     }
     
-    //AllRouteInfo : 서버에서 가져오는 모든 Route, Ex) 1번(윤경로 경로),2번(자연 경로),3번 기타 등등
-    @Published var AllRouteInfo:[RouteInfo] = [RouteInfo]()
+    
     //UserSelected : 현재 선택된 route 혹은 beacon
-    @Published var UserSelected:String = "선택해주세요!"
+    @Published var UserSelectedRoute:String = "건국대학교"
+    //RouteBeaconList : 현재 선택된 route의 Beacon
+    @Published var RouteBeaconList:[BeaconInfo] = [BeaconInfo]()
+    //RouteAnnotations : 현재 선택된 route의 annotation
+    @Published var RouteAnnotations:[CustomPointAnnotation] = [CustomPointAnnotation]()
     
     
     
@@ -71,6 +78,21 @@ class UserSettings:ObservableObject{
                     print(error)
                 }
         }
+    }
+}
+
+public struct NavigationBarHider: ViewModifier {
+
+    public func body(content: Content) -> some View {
+        content
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+    }
+}
+
+extension View {
+    public func hideNavigationBar() -> some View {
+        modifier(NavigationBarHider())
     }
 }
 

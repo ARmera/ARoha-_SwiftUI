@@ -8,55 +8,41 @@
 
 import Foundation
 import SwiftUI
+import Alamofire
 
-//class SearchViewModel: ObservableObject {
-//
-//    @Published var searchTerm:String = ""{
-//        didSet{
-//            filterQuery()
-//        }
-//    }
-//
-//    @Published var queryCandidate:[CityItem] = []
-//
-//    func filterQuery() {
-//
-//        if searchTerm.count > 1 {
-//            queryCandidate.removeAll()
-//            DispatchQueue.global(qos: .userInitiated).async {
-//                let temp = self.cities.filter {
-//                    self.searchTerm.isEmpty ? true : "\($0)".localizedStandardContains(self.searchTerm.trimmingCharacters(in: .whitespacesAndNewlines))
-//                }
-//                DispatchQueue.main.async {
-//                    self.queryCandidate = temp
-//                }
-//            }
-//        }
-//    }
-//
-//    //최근 검색어 보여주는 함수
-//    func showRecentSearch() {
-//
-//        let recentSearch = Array(realm.objects(RealmSearchCity.self))
-//        queryCandidate.removeAll()
-//        var temp_cityitem = [CityItem]()
-//
-//        for item in recentSearch{
-//            let cityitem = CityItem(en_country:item.national_eng , ko_country: item.national_kr, en_city: item.city_eng, ko_city: item.city_kr)
-//            temp_cityitem.append(cityitem)
-//        }
-//        queryCandidate = temp_cityitem
-//    }
-//
-//    init(){
-//        cities = Bundle.main.decode([CityItem].self, from: "country_city_mapping.json")
-//    }
-//}
+class SearchViewModel: ObservableObject {
+    
+    @Published var searchTerm:String = ""{
+        didSet{
+            filterQuery()
+        }
+    }
+    
+    @Published var queryCandidate:[RouteInfo] = []
+    
+    func filterQuery() {
+        
+        if searchTerm.count > 1 {
+            queryCandidate.removeAll()
+            DispatchQueue.global(qos: .userInitiated).async {
+                let temp = AllRouteInfo.filter {
+                    self.searchTerm.isEmpty ? true : "\($0)".localizedStandardContains(self.searchTerm.trimmingCharacters(in: .whitespacesAndNewlines))
+                }
+                DispatchQueue.main.async {
+                    self.queryCandidate = temp
+                }
+            }
+        }
+    }
+}
 
 struct SearchSheetView:View{
     @Binding var showSearchView: Bool
-    var sheetTitle:String = "어디로 떠나시겠어요?"
+    @ObservedObject var viewmodel = SearchViewModel()
+    @EnvironmentObject var settings:UserSettings
 
+    var sheetTitle:String = "어디로 떠나시겠어요?"
+    
     var body: some View{
         VStack{
             VStack {
@@ -71,50 +57,119 @@ struct SearchSheetView:View{
                 
                 //검색창
                 HStack {
-                   Text("여행지를 입력해주세요").font(Font.custom("SpoqaHanSans-Regular", size: 14))
+                    ZStack(alignment: .leading) {
+                        if viewmodel.searchTerm.isEmpty {
+                            Text("여행지를 입력해주세요")
+                                .foregroundColor(.gray)
+                        }
+                        TextField("", text: $viewmodel.searchTerm)
+                            .foregroundColor(.black).font(Font.custom("SpoqaHanSans-Regular", size: 14))
+                    }
                     Spacer()
                     Image("search")
-
+                    
                 } .padding(.horizontal, 14).padding(.vertical, 11)
                     .frame(width: 335, height: 42, alignment: .center)
                     .background(RoundedRectangle(cornerRadius: 5.0).foregroundColor(Color("blue150")))
-
+                
                 //최근 검색어 목록
                 Spacer().frame(height : 21)
                 Divider().foregroundColor(Color("blue300"))
-
+                
                 //검색 목록
-//                Spacer().frame(height : 20)
-//                HStack{
-//                    if self.viewModel.searchTerm.count == 0 {
-//                        Image("pin")
-//                        Text("모든 루트와 비콘")
-//                            .font(Font.custom("SpoqaHanSans-Regular", size: 14))
-//                            .onAppear() {
-//                                self.viewModel.showRecentSearch()
-//                        }
-//                    }
-//                    else{
-//                        Text("검색결과")
-//                            .font(Font.custom("SpoqaHanSans-Regular", size: 14))
-//                            .foregroundColor(colorScheme == .dark ? .white : .black)
-//
-//                        Text("\(self.viewModel.queryCandidate.count)건")
-//                            .font(Font.custom("SpoqaHanSans-Bold", size: 14))
-//                            .foregroundColor(Color.blue)
-//                    }
-//                    Spacer()
-//                }.padding(.leading, 20)
-//
-//                //검색 결과
-//
-//                NavigationView {
-//                    List(self.viewModel.queryCandidate, id: \.self)  { item in
-//                    }.hideNavigationBar()
-//
-//                }
+                Spacer().frame(height : 20)
+                HStack{
+                    if self.viewmodel.searchTerm.count == 0 {
+                        Image("pin")
+                        Text("모든 루트")
+                            .font(Font.custom("SpoqaHanSans-Regular", size: 14))
+                    }
+                    else{
+                        Text("검색결과")
+                            .font(Font.custom("SpoqaHanSans-Regular", size: 14))
+                        
+                        Text("\(self.viewmodel.queryCandidate.count)건")
+                            .font(Font.custom("SpoqaHanSans-Bold", size: 14))
+                    }
+                    Spacer()
+                }.padding(.leading, 20)
+                
+                //검색 결과
+                if(self.viewmodel.searchTerm == ""){
+                    NavigationView {
+                        List(AllRouteInfo, id: \.self)  { item in
+                            RouteRow(routeinfo: item, showSearchView: self.$showSearchView)
+                                .environmentObject(self.settings)
+                        }.hideNavigationBar()
+                        
+                    }
+                }else{
+                    NavigationView {
+                        List(self.viewmodel.queryCandidate, id: \.self)  { item in
+                            RouteRow(routeinfo: item, showSearchView: self.$showSearchView)
+                                .environmentObject(self.settings)
+                        }.hideNavigationBar()
+                        
+                    }
+                }
             }
         }.padding(.top)
         
     }
+}
+
+struct RouteRow:View{
+    var routeinfo:RouteInfo
+    @Binding var showSearchView:Bool
+    
+    @EnvironmentObject var settings:UserSettings
+    
+    var body: some View {
+        Button(action:{
+            //이름 바꾸기
+            self.settings.UserSelectedRoute = self.routeinfo.title
+            //해당하는 정보 불러오기
+            self.LoadOneRecommedRoute(id: self.routeinfo.id)
+            //sheet 닫기
+            self.showSearchView = false
+        }){
+            HStack {
+                Image("loute")
+                VStack(alignment: .leading) {
+                    Text("\(routeinfo.title),")
+                        .font(Font.custom("SpoqaHanSans-Regular", size: 15))
+                    
+                    HStack {
+                        Text("\(routeinfo.estimated_time.toString()) 분,")
+                        Text("\(routeinfo.total_distance.toString()) km,")
+                    }.font(Font.custom("SpoqaHanSans-Regular", size: 12))
+                        .foregroundColor(.gray)
+                    
+                }.layoutPriority(1)
+                    .padding(.horizontal, 12)
+                
+                Spacer()
+            }
+        }.buttonStyle(PlainButtonStyle())
+    }
+    
+    //MARK: @선택한 루트의 정보를 가져오는 함수
+    func LoadOneRecommedRoute(id:Int){
+        AF.request(APIRoute.selectroute(select: String(id)).url(), method: .get).responseData{ response in
+            switch response.result{
+            case .success(let value):
+                do{
+                    let route = try JSONDecoder().decode(ResponseRoute.self, from: value)
+                    self.settings.RouteBeaconList = route.beacon_list
+                    self.settings.RouteAnnotations = convertBeacon2Anno(beaconinfos: route.beacon_list)
+                }catch{
+                    print("JSONDecoder().decode DecodingError")
+                }
+            case .failure(let error):
+                print("failure \(error)")
+            }
+        }
+    }
+
+    
 }

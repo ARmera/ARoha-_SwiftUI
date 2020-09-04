@@ -28,3 +28,29 @@ func Data_to_CLLocation(data:Data)->([Pos],[[String:Any]]){
     }
     return (routeList,featureList);
 }
+
+func convertBeaconSummary2Anno(beaconinfos:[BeaconSummaryInfo])->[CustomPointAnnotation]{
+    var ret = [CustomPointAnnotation]()
+    for item in beaconinfos{
+        let title = item.title
+        let coord = CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)
+        ret.append(CustomPointAnnotation(coordinate: coord, title: title))
+    }
+    return ret;
+}
+
+func convertBeacon2Anno(beaconinfos:[BeaconInfo])->[CustomPointAnnotation]{
+    var ret = [CustomPointAnnotation]()
+    for item in beaconinfos{
+        let title = item.title
+        let coord = CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)
+        ret.append(CustomPointAnnotation(coordinate: coord, title: title))
+    }
+    return ret;
+}
+
+extension Double {
+    func toString() -> String {
+        return String(format: "%.1f",self)
+    }
+}

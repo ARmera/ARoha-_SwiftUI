@@ -12,6 +12,13 @@ struct ResponseRoute : Decodable,Hashable{
     var beacon_list:[BeaconInfo]
 }
 
+struct BeaconSummaryInfo:Decodable,Hashable{
+    var id:Int
+    var title:String
+    var latitude:Double
+    var longitude:Double
+}
+
 struct BeaconInfo : Decodable,Hashable{
     var title:String
     var description:String

@@ -14,7 +14,6 @@ enum APIRoute{ case
     selectroute(select: String)
     
     var path:String{
-        
         switch self {
         case .route: return "route"
         case .beacon: return "beacon"
