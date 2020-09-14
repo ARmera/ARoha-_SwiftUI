@@ -20,6 +20,7 @@ struct GridView<Content: View>: View {
                 HStack {
                     ForEach(0 ..< self.columns, id: \.self) { column in
                         self.content(row, column)
+                        .cornerRadius(20)
                     }
                 }
             }

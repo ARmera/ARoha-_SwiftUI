@@ -11,22 +11,48 @@ import SwiftUI
 import Alamofire
 struct LoginView: View {
     @EnvironmentObject var setting:UserSettings
+    @State var width:CGFloat = 0;
+    @State var height:CGFloat = 0;
     var body: some View {
-        VStack{
-            VStack(alignment: .center){
-                Image("main-logo").resizable().frame(width: 100, height: 100, alignment: .center)
-                Text("AroHa!").font(.footnote)
-            }.onAppear(){
-                self.LoadAllRecomendRoute()
-                self.LoadAllBeacon()
-            }
-            Button(action: {
-                self.setting.isLogin = true
-            }){
-                HStack(spacing : 10){
-                    Image("kakao-login").resizable()
+        ZStack{
+            Image("konkuk").resizable().frame(width:screenWidth)
+                .background(Color.black).opacity(0.5)
+            VStack{
+                VStack(alignment: .center){
+                    Image("login-logo2").resizable().frame(width: width, height: height, alignment: .center)
+                        .animation(.easeInOut(duration : 2))
+                }.onAppear(){
+                    self.LoadAllRecomendRoute()
+                    self.LoadAllBeacon()
+                    self.LoadAllUserInfo()
+                    self.width = screenWidth - 50;
+                    self.height = 200;
                 }
-            }.frame(width: 300, height: 50, alignment: .center)
+                Button(action: {
+                    self.setting.isLogin = true
+                }){
+                    HStack(spacing : 10){
+                        Image("kakao-login").resizable()
+                    }
+                }.frame(width: 300, height: 50, alignment: .center)
+            }.zIndex(1)
+        }.edgesIgnoringSafeArea(.all)
+        
+    }
+    //MARK: @사용자의 정보를 가져오는 함수
+    func LoadAllUserInfo(){
+        AF.request(APIRoute.id(uuid: "1").url(),method: .get).responseData{ response in
+            switch response.result{
+            case .success(let value):
+                do{
+                    self.setting.UserGetStamp = try JSONDecoder().decode(UsersStampInfo.self, from: value)
+                    print("self.settings : \(self.setting.UserGetStamp)" )
+                }catch{
+                    print("JSONDecoder().decode DecodingError")
+                }
+            case .failure(let error):
+                print("failure \(error)")
+            }
         }
     }
     

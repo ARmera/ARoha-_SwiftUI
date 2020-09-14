@@ -15,7 +15,7 @@ import ARCL
 let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 
-//AllRouteInfo : 서버에서 가져오는 모든 Route, Ex) 1번(윤경로 경로),2번(자연 경로),3번 기타 등등
+//AllRouteInfo : 서버에서 가져오는 모든 Route, Ex) 1번(),2번(자연 경로),3번 기타 등등
 var AllRouteInfo:[RouteInfo] = [RouteInfo]()
 //AllBeaconInfo : 서버에서 가져오는 모든 Beacon
 var AllBeaconInfo:[BeaconSummaryInfo] = [BeaconSummaryInfo]()
@@ -48,7 +48,7 @@ class UserSettings:ObservableObject{
     //RouteAnnotations : 현재 선택된 route의 annotation
     @Published var RouteAnnotations:[CustomPointAnnotation] = [CustomPointAnnotation]()
     //UserGetStamp : 현재 선택된 User가 얻은 스탬프 목록
-    @Published var UserGetStamp:[String] = ["craft"]
+    @Published var UserGetStamp:UsersStampInfo = UsersStampInfo(stamp_status: [], stamp_achievement: 0)
     
     
     func requestRoute(start:CLLocationCoordinate2D,dest:CLLocationCoordinate2D){
@@ -83,7 +83,7 @@ class UserSettings:ObservableObject{
 }
 
 public struct NavigationBarHider: ViewModifier {
-
+    
     public func body(content: Content) -> some View {
         content
             .navigationBarTitle("")
@@ -95,5 +95,10 @@ extension View {
     public func hideNavigationBar() -> some View {
         modifier(NavigationBarHider())
     }
+}
+extension View{
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+           clipShape( RoundedCorner(radius: radius, corners: corners) )
+       }
 }
 

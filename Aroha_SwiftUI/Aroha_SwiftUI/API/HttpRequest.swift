@@ -11,13 +11,17 @@ import Foundation
 enum APIRoute{ case
     route,
     beacon,
-    selectroute(select: String)
+    selectroute(select: String),
+    weather,
+    id(uuid:String)
     
     var path:String{
         switch self {
         case .route: return "route"
         case .beacon: return "beacon"
         case .selectroute(let select): return "route/\(select)"
+        case .weather: return "main/weather"
+        case .id(let uuid):return "main/\(uuid)"
         }
     }
     

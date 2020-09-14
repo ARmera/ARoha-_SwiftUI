@@ -47,6 +47,7 @@
 		28D58FCB24CC0E7B0089C134 /* Tab4Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FCA24CC0E7B0089C134 /* Tab4Main.swift */; };
 		28D58FCD24CC175A0089C134 /* SnapCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58FCC24CC175A0089C134 /* SnapCarousel.swift */; };
 		28DB638B24E2C80500ACF155 /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB638A24E2C80500ACF155 /* enum.swift */; };
+		28E1FE85250F81C900EB1AC2 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1FE84250F81C900EB1AC2 /* UserInfo.swift */; };
 		28E2BD3824FA99C10018F8A3 /* SearchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2BD3724FA99C10018F8A3 /* SearchSheetView.swift */; };
 		28E2BD3A24FAA1A50018F8A3 /* BeaconInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E2BD3924FAA1A50018F8A3 /* BeaconInfo.swift */; };
 		7FCFDA62D611DF01FA4644AF /* Pods_Aroha_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C5988D8581C897919D827C /* Pods_Aroha_SwiftUI.framework */; };
@@ -117,6 +118,7 @@
 		28D58FCA24CC0E7B0089C134 /* Tab4Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab4Main.swift; sourceTree = "<group>"; };
 		28D58FCC24CC175A0089C134 /* SnapCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCarousel.swift; sourceTree = "<group>"; };
 		28DB638A24E2C80500ACF155 /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
+		28E1FE84250F81C900EB1AC2 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		28E2BD3724FA99C10018F8A3 /* SearchSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSheetView.swift; sourceTree = "<group>"; };
 		28E2BD3924FAA1A50018F8A3 /* BeaconInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconInfo.swift; sourceTree = "<group>"; };
 		35C5988D8581C897919D827C /* Pods_Aroha_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aroha_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				28DB638A24E2C80500ACF155 /* enum.swift */,
 				288173DD24FA8D4D00EBA564 /* RouteInfo.swift */,
 				28E2BD3924FAA1A50018F8A3 /* BeaconInfo.swift */,
+				28E1FE84250F81C900EB1AC2 /* UserInfo.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				288173C724FA163900EBA564 /* DragContentView.swift in Sources */,
 				288173C524FA162300EBA564 /* DragOverCardView.swift in Sources */,
 				28D58FC224CC0DBF0089C134 /* Tab1Main.swift in Sources */,
+				28E1FE85250F81C900EB1AC2 /* UserInfo.swift in Sources */,
 				280A8F8824EA6FAE00C4AD46 /* StampImageView.swift in Sources */,
 				28CDF7EE24CC211E000EF9E9 /* Tab1SelectRoute.swift in Sources */,
 				2844017B25027D260055DB47 /* GridLayout.swift in Sources */,
