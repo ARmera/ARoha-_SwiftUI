@@ -11,11 +11,11 @@ import SwiftUI
 
 struct SnapCarousel: View {
     var UIState: UIStateModel
-    @Binding var items:[BeaconInfo]
+    @EnvironmentObject var settings:UserSettings
     var body: some View
     {
-        let spacing:            CGFloat = 40
-        let widthOfHiddenCards: CGFloat = 40    // UIScreen.main.bounds.width - 10
+        let spacing:            CGFloat = 30
+        let widthOfHiddenCards: CGFloat = 60    // UIScreen.main.bounds.width - 10
         let cardHeight:         CGFloat = 200
         
         
@@ -24,25 +24,54 @@ struct SnapCarousel: View {
                 //
                 // TODO: find a way to avoid passing same arguments to Carousel and Item
                 //
-                Carousel( numberOfItems: CGFloat( items.count ), spacing: spacing, widthOfHiddenCards: widthOfHiddenCards )
+                Carousel( numberOfItems: CGFloat( self.settings.currentBeaconList.count ), spacing: spacing, widthOfHiddenCards: widthOfHiddenCards )
                 {
-                    ForEach( items, id: \.self.index ) { item in
+                    ForEach( self.settings.currentBeaconList, id: \.self.index ) { item in
                         Item( _id:                  Int((item as BeaconInfo).index),
                               spacing:              spacing,
                               widthOfHiddenCards:   widthOfHiddenCards,
                               cardHeight:           cardHeight )
                         {
-                            VStack{
-                                Text("\((item as BeaconInfo).title)")                    .font(Font.custom("BMJUA", size: 20))
 
-                                Text("\((item as BeaconInfo).description)")
-                                .font(Font.custom("SpoqaHanSans-Regular", size: 10))
-
-
+                            ZStack{
+                                Image("konkuk-logo").resizable().opacity(0.5)
+                                    .offset(x: 70, y: 70).background(Color("blue200")).foregroundColor(Color("blue200"))
+                                VStack{
+                                    Text("\((item as BeaconInfo).title)").font(Font.custom("BMJUA", size: 20))
+                                    Text("\((item as BeaconInfo).description)")
+                                    .font(Font.custom("SpoqaHanSans-Regular", size: 10))
+                                }
+                                //MARK: -하드코딩
+                                if((item as BeaconInfo).index < 2){
+                                    Text("Clear")
+                                        .font(.headline)
+                                        .padding()
+                                        .cornerRadius(10)
+                                        .foregroundColor(Color.blue)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.blue, lineWidth: 3.0)
+                                    ).padding(24)
+                                        .rotationEffect(Angle.degrees(45))
+                                    .offset(x: 80, y: -15)
+                                }else if((item as BeaconInfo).index == 2){
+                                    Text("진행중")
+                                        .font(.headline)
+                                        .padding()
+                                        .cornerRadius(10)
+                                        .foregroundColor(Color.green)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.green, lineWidth: 3.0)
+                                    ).padding(24)
+                                        .rotationEffect(Angle.degrees(45))
+                                    .offset(x: 80, y: -15)
+                                }
+                                
                             }
                         }
                         .foregroundColor( Color.black )
-                        .background( Color("Primary") )
+                        .background( Color("blue200") )
                         .cornerRadius( 8 )
                         .shadow( color: Color( "Blue200" ), radius: 4, x: 0, y: 4 )
                         .transition( AnyTransition.slide )

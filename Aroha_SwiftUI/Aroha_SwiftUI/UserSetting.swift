@@ -19,6 +19,9 @@ let screenHeight = UIScreen.main.bounds.size.height
 var AllRouteInfo:[RouteInfo] = [RouteInfo]()
 //AllBeaconInfo : 서버에서 가져오는 모든 Beacon
 var AllBeaconInfo:[BeaconSummaryInfo] = [BeaconSummaryInfo]()
+//TodaysWeather : 서버에서 가지고 온 오늘의 날씨
+var TodaysWeather:WeatherInfo = WeatherInfo(weather: "", dust: "")
+
 
 class UserSettings:ObservableObject{
     //scene_instance : scene 관리
@@ -49,8 +52,11 @@ class UserSettings:ObservableObject{
     @Published var RouteAnnotations:[CustomPointAnnotation] = [CustomPointAnnotation]()
     //UserGetStamp : 현재 선택된 User가 얻은 스탬프 목록
     @Published var UserGetStamp:UsersStampInfo = UsersStampInfo(stamp_status: [], stamp_achievement: 0)
-    
-    
+    //UserSelectTourRoute : 유저가 투어를 위해 선택한 루트
+    @Published var UserSelectTourRoute:RouteInfo? = nil
+    //currentBeaconList : 현재 선택한 루트의 모든 비콘 리스트
+    @Published var currentBeaconList:[BeaconInfo] = [BeaconInfo]()
+
     func requestRoute(start:CLLocationCoordinate2D,dest:CLLocationCoordinate2D){
         let appKey = "3b93e7ea-9bb4-4402-afdb-a96aaab9fa23"
         

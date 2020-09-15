@@ -26,10 +26,12 @@
 		288173DE24FA8D4D00EBA564 /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288173DD24FA8D4D00EBA564 /* RouteInfo.swift */; };
 		288173E124FA8DD000EBA564 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288173E024FA8DD000EBA564 /* AboutView.swift */; };
 		28BB36C8250224DE00722FE0 /* MapViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB36C7250224DE00722FE0 /* MapViewSettings.swift */; };
-		28CDF7EE24CC211E000EF9E9 /* Tab1SelectRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */; };
 		28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */; };
 		28CDF7F224CC2543000EF9E9 /* AR&MapWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */; };
 		28CDF7F424CC3198000EF9E9 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F324CC3198000EF9E9 /* ARSceneView.swift */; };
+		28CED98F25107F5B00A0AB5F /* Tab1SelectRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CED98E25107F5B00A0AB5F /* Tab1SelectRouteView.swift */; };
+		28CED9912510822A00A0AB5F /* RouteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CED9902510822A00A0AB5F /* RouteCardView.swift */; };
+		28CED99325109A3500A0AB5F /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CED99225109A3500A0AB5F /* WeatherInfo.swift */; };
 		28D58F8124CBEF8B0089C134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8024CBEF8B0089C134 /* AppDelegate.swift */; };
 		28D58F8324CBEF8B0089C134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */; };
 		28D58F8524CBEF8B0089C134 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D58F8424CBEF8B0089C134 /* ContentView.swift */; };
@@ -91,10 +93,12 @@
 		288173DD24FA8D4D00EBA564 /* RouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
 		288173E024FA8DD000EBA564 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		28BB36C7250224DE00722FE0 /* MapViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSettings.swift; sourceTree = "<group>"; };
-		28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1SelectRoute.swift; sourceTree = "<group>"; };
 		28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Tour.swift; sourceTree = "<group>"; };
 		28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AR&MapWebView.swift"; sourceTree = "<group>"; };
 		28CDF7F324CC3198000EF9E9 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
+		28CED98E25107F5B00A0AB5F /* Tab1SelectRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1SelectRouteView.swift; sourceTree = "<group>"; };
+		28CED9902510822A00A0AB5F /* RouteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCardView.swift; sourceTree = "<group>"; };
+		28CED99225109A3500A0AB5F /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		28D58F7D24CBEF8B0089C134 /* Aroha_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aroha_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D58F8024CBEF8B0089C134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D58F8224CBEF8B0089C134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				288173DD24FA8D4D00EBA564 /* RouteInfo.swift */,
 				28E2BD3924FAA1A50018F8A3 /* BeaconInfo.swift */,
 				28E1FE84250F81C900EB1AC2 /* UserInfo.swift */,
+				28CED99225109A3500A0AB5F /* WeatherInfo.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -296,11 +301,12 @@
 			children = (
 				28D58FC124CC0DBF0089C134 /* Tab1Main.swift */,
 				28D58FCC24CC175A0089C134 /* SnapCarousel.swift */,
-				28CDF7ED24CC211E000EF9E9 /* Tab1SelectRoute.swift */,
 				28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */,
 				28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */,
 				28CDF7F324CC3198000EF9E9 /* ARSceneView.swift */,
 				280A8F8724EA6FAE00C4AD46 /* StampImageView.swift */,
+				28CED98E25107F5B00A0AB5F /* Tab1SelectRouteView.swift */,
+				28CED9902510822A00A0AB5F /* RouteCardView.swift */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				28CDF7F224CC2543000EF9E9 /* AR&MapWebView.swift in Sources */,
 				288173E124FA8DD000EBA564 /* AboutView.swift in Sources */,
 				28D58FCD24CC175A0089C134 /* SnapCarousel.swift in Sources */,
+				28CED98F25107F5B00A0AB5F /* Tab1SelectRouteView.swift in Sources */,
 				28BB36C8250224DE00722FE0 /* MapViewSettings.swift in Sources */,
 				28E2BD3824FA99C10018F8A3 /* SearchSheetView.swift in Sources */,
 				28468B2124E179B00098AD96 /* HttpRequest.swift in Sources */,
@@ -624,13 +631,14 @@
 				28D58FC224CC0DBF0089C134 /* Tab1Main.swift in Sources */,
 				28E1FE85250F81C900EB1AC2 /* UserInfo.swift in Sources */,
 				280A8F8824EA6FAE00C4AD46 /* StampImageView.swift in Sources */,
-				28CDF7EE24CC211E000EF9E9 /* Tab1SelectRoute.swift in Sources */,
 				2844017B25027D260055DB47 /* GridLayout.swift in Sources */,
 				28D58FB724CC02DF0089C134 /* UserSetting.swift in Sources */,
 				280A8F8624EA6E8E00C4AD46 /* ImageLoader.swift in Sources */,
 				28D58F8524CBEF8B0089C134 /* ContentView.swift in Sources */,
+				28CED99325109A3500A0AB5F /* WeatherInfo.swift in Sources */,
 				2844017925025BFD0055DB47 /* BeaconDetailView.swift in Sources */,
 				28D58FC924CC0E700089C134 /* Tab3Main.swift in Sources */,
+				28CED9912510822A00A0AB5F /* RouteCardView.swift in Sources */,
 				28D58FC724CC0E650089C134 /* Tab2Main.swift in Sources */,
 				28468B2424E188640098AD96 /* Pretreatment .swift in Sources */,
 				28CDF7F424CC3198000EF9E9 /* ARSceneView.swift in Sources */,

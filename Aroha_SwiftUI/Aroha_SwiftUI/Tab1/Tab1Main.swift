@@ -15,7 +15,7 @@ struct Tab1MainView:View{
     var body:some View{
         NavigationView{
             Tab1ContentView()
-                .navigationBarTitle(Text("현재 투어 상태").font(.subheadline), displayMode: .inline)
+                .navigationBarTitle(Text("캠퍼스 투어").font(.subheadline), displayMode: .inline)
         }
     }
     
@@ -25,77 +25,94 @@ struct Tab1ContentView:View{
     @EnvironmentObject var settings:UserSettings
     //showSelectedRouteView : Route 선택 리스트 뷰 보일지 안보일지 결정하는 변수
     @State var showSelectedRouteView:Bool = true
-    //currentBeaconList : 현재 선택한 루트의 모든 비콘 리스트
-    @State var currentBeaconList:[BeaconInfo] = [BeaconInfo]()
     var body:some View{
         VStack{
             //route를 선택하는 뷰
-            if showSelectedRouteView{SelectRouteView(showSelectedRouteView: $showSelectedRouteView, currentBeaconList: self.$currentBeaconList)}
-            //루트의 비콘들을 캐로셀로 나열한 뷰
-            else {SnapCarousel(UIState: UIStateModel(),items : $currentBeaconList)}
-            HStack{
-                //go to toure
-                NavigationLink(destination: Tab1TourView()){
-                    Text("투어 시작하기").padding().overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.blue, lineWidth: 4)
-                    )
-                }.buttonStyle(PlainButtonStyle()).padding()
-                    .simultaneousGesture(TapGesture().onEnded{
-                        // MARK: @하드코딩 되어 있는 부분
-//                       self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: 37.5424107, longitude: 127.0765058), dest: CLLocationCoordinate2D(latitude:37.531544, longitude: 127.0645193))
-                        let first_beacon = self.currentBeaconList.first!
-                        let last_beacon = self.currentBeaconList.last!
-                        self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: first_beacon.latitude, longitude: first_beacon.longitude), dest: CLLocationCoordinate2D(latitude:last_beacon.latitude, longitude: last_beacon.longitude))
-                    })
-                
-                //cancel the tour
-                NavigationLink(destination: Tab2MainView()){
-                    Text("투어 취소하기").padding().overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(Color.blue, lineWidth: 4)
-                    )
-                }.buttonStyle(PlainButtonStyle()).padding()
-            }
-        }
-    }
-    
-    
-}
-
-struct SelectRouteView:View{
-    @EnvironmentObject var settings:UserSettings
-    @Binding var showSelectedRouteView:Bool
-    @Binding var currentBeaconList:[BeaconInfo]
-    var body:some View{
-        List(AllRouteInfo, id: \.self){ item in
-            Text("\((item as RouteInfo).title)").onTapGesture {
-                self.showSelectedRouteView.toggle()
-                self.LoadOneRecommedRoute(id: (item as RouteInfo).id)
-            }
-        }
-    }
-    
-    /*선택한 route의 비콘을 가져오는 함수*/
-    func LoadOneRecommedRoute(id:Int){
-        AF.request(APIRoute.selectroute(select: String(id)).url(), method: .get).responseData{ response in
-            switch response.result{
-            case .success(let value):
-                do{
-                    let route = try JSONDecoder().decode(ResponseRoute.self, from: value)
-                    self.currentBeaconList = route.beacon_list
-                }catch{
-                    print("JSONDecoder().decode DecodingError")
+            if self.settings.UserSelectTourRoute == nil{
+                SelectRouteView(showSelectedRouteView: $showSelectedRouteView)}
+                //루트의 비콘들을 캐로셀로 나열한 뷰
+            else {
+                VStack{
+                    SnapCarousel(UIState: UIStateModel())
+                    HStack{
+                        //go to tour
+                        NavigationLink(destination: Tab1TourView()){
+                            HStack {
+                                Image(systemName: "forward.fill")
+                                Text("투어 시작")
+                                    .font(Font.custom("SpoqaHanSans-Bold", size: 20))
+                            }
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.gray]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(40)
+                        }.buttonStyle(PlainButtonStyle()).padding()
+                            .simultaneousGesture(TapGesture().onEnded{
+                                let first_beacon = self.settings.currentBeaconList.first!
+                                let last_beacon = self.settings.currentBeaconList.last!
+                                self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: first_beacon.latitude, longitude: first_beacon.longitude), dest: CLLocationCoordinate2D(latitude:last_beacon.latitude, longitude: last_beacon.longitude))
+                            })
+                        
+                        //cancel the tour
+                        NavigationLink(destination: Tab2MainView()){
+                            
+                            HStack {
+                                Image(systemName: "stop.fill")
+                                Text("투어 중단")
+                                    .font(Font.custom("SpoqaHanSans-Bold", size: 20))
+                            }
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.gray]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(40)
+                        }.buttonStyle(PlainButtonStyle()).padding()
+                            .simultaneousGesture(TapGesture().onEnded{
+                                self.settings.UserSelectTourRoute = nil
+                            })
+                        
+                    }
+                    TourInfoView()
+                    Spacer()
                 }
-            case .failure(let error):
-                print("failure \(error)")
             }
+            
         }
     }
 }
 
-
-
+struct TourInfoView:View{
+    var body: some View{
+        VStack(spacing : 16.0){
+            HStack{
+                Text("투어 진행률").font(Font.custom("BMJUA", size: 20))
+                Spacer()
+                Text("82%")
+            }.padding()
+            Divider().frame(height:5)
+            HStack{
+                Text("투어 진행률").font(Font.custom("BMJUA", size: 20))
+                Spacer()
+                Text("2개")
+            }.padding()
+            Divider().frame(height:5)
+            HStack{
+                VStack(){
+                    Text("오늘의 날씨").font(Font.custom("BMJUA", size: 20))
+                    Image(systemName : "cloud.sun.fill")
+                }
+                Spacer()
+                Divider().frame(width:5)
+                Spacer()
+                VStack{
+                    Text("오늘의 미세먼지").font(Font.custom("BMJUA", size: 20))
+                    Text("\(TodaysWeather.dust)")
+                }
+            }.padding()
+            Spacer()
+            
+        }
+    }
+}
 
 struct Tab1Main_Previews: PreviewProvider {
     @EnvironmentObject var settings:UserSettings

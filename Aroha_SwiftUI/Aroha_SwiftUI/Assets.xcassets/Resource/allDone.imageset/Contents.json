@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "konkuk2.jpg",
+      "filename" : "allDone.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "allDone@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "allDone@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -20,11 +20,12 @@ struct LoginView: View {
             VStack{
                 VStack(alignment: .center){
                     Image("login-logo2").resizable().frame(width: width, height: height, alignment: .center)
-                        .animation(.easeInOut(duration : 2))
+                        .animation(.easeInOut(duration : 0.5))
                 }.onAppear(){
                     self.LoadAllRecomendRoute()
                     self.LoadAllBeacon()
                     self.LoadAllUserInfo()
+                    self.LoadAllWeather()
                     self.width = screenWidth - 50;
                     self.height = 200;
                 }
@@ -87,6 +88,23 @@ struct LoginView: View {
             }
         }
     }
+    //MARK: @서버의 날씨 정보를 가지고 오는 함수
+    func LoadAllWeather(){
+        AF.request(APIRoute.weather.url(),method: .get).responseData{response in
+            switch response.result{
+            case .success(let value):
+                do{
+                    TodaysWeather = try JSONDecoder().decode(WeatherInfo.self, from: value)
+                }catch{
+                    print("JSONDecoder().decode DecodingError")
+                }
+            case .failure(let error):
+                print("failure \(error)")
+            }
+
+        }
+    }
+
 }
 
 struct LoginView_Previews: PreviewProvider {
