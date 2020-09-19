@@ -12,6 +12,7 @@ import MapKit
 import Alamofire
 import ARCL
 
+var test:Data? = nil
 let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 
@@ -56,6 +57,19 @@ class UserSettings:ObservableObject{
     @Published var UserSelectTourRoute:RouteInfo? = nil
     //currentBeaconList : 현재 선택한 루트의 모든 비콘 리스트
     @Published var currentBeaconList:[BeaconInfo] = [BeaconInfo]()
+    //tourVisitBeaconIndex : 현재 투어중인 비콘의 Index
+    @Published var tourVisitBeaconIndex:Int = -1{
+        didSet{
+            print("tourVisitBeaconIndex : \(tourVisitBeaconIndex)")
+            if(tourVisitBeaconIndex < currentBeaconList.count - 1){
+                let start_location = currentBeaconList[tourVisitBeaconIndex]
+                let dest_location = currentBeaconList[tourVisitBeaconIndex+1]
+                let start = CLLocationCoordinate2D(latitude: start_location.latitude, longitude: start_location.longitude)
+                let dest = CLLocationCoordinate2D(latitude: dest_location.latitude, longitude: dest_location.longitude)
+                requestRoute(start: start, dest: dest)
+            }
+        }
+    }
 
     func requestRoute(start:CLLocationCoordinate2D,dest:CLLocationCoordinate2D){
         let appKey = "3b93e7ea-9bb4-4402-afdb-a96aaab9fa23"
@@ -78,6 +92,7 @@ class UserSettings:ObservableObject{
             .responseData{ response in
                 switch response.result{
                 case .success(let value):
+                    test = value
                     let info = Data_to_CLLocation(data: value)
                     self.currentRouteList = info.0
                     self.currentRouteProperties = info.1

@@ -25,6 +25,7 @@
 		288173DC24FA748D00EBA564 /* BMJUA_otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = 288173DB24FA748900EBA564 /* BMJUA_otf.otf */; };
 		288173DE24FA8D4D00EBA564 /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288173DD24FA8D4D00EBA564 /* RouteInfo.swift */; };
 		288173E124FA8DD000EBA564 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288173E024FA8DD000EBA564 /* AboutView.swift */; };
+		2897154F2515C0BB00BCBD33 /* TourMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897154E2515C0BB00BCBD33 /* TourMapView.swift */; };
 		28BB36C8250224DE00722FE0 /* MapViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB36C7250224DE00722FE0 /* MapViewSettings.swift */; };
 		28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */; };
 		28CDF7F224CC2543000EF9E9 /* AR&MapWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */; };
@@ -92,6 +93,7 @@
 		288173DB24FA748900EBA564 /* BMJUA_otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMJUA_otf.otf; sourceTree = "<group>"; };
 		288173DD24FA8D4D00EBA564 /* RouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
 		288173E024FA8DD000EBA564 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		2897154E2515C0BB00BCBD33 /* TourMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourMapView.swift; sourceTree = "<group>"; };
 		28BB36C7250224DE00722FE0 /* MapViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSettings.swift; sourceTree = "<group>"; };
 		28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Tour.swift; sourceTree = "<group>"; };
 		28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AR&MapWebView.swift"; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				280A8F8724EA6FAE00C4AD46 /* StampImageView.swift */,
 				28CED98E25107F5B00A0AB5F /* Tab1SelectRouteView.swift */,
 				28CED9902510822A00A0AB5F /* RouteCardView.swift */,
+				2897154E2515C0BB00BCBD33 /* TourMapView.swift */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				28D58FC924CC0E700089C134 /* Tab3Main.swift in Sources */,
 				28CED9912510822A00A0AB5F /* RouteCardView.swift in Sources */,
 				28D58FC724CC0E650089C134 /* Tab2Main.swift in Sources */,
+				2897154F2515C0BB00BCBD33 /* TourMapView.swift in Sources */,
 				28468B2424E188640098AD96 /* Pretreatment .swift in Sources */,
 				28CDF7F424CC3198000EF9E9 /* ARSceneView.swift in Sources */,
 			);

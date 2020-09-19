@@ -48,9 +48,14 @@ struct Tab1ContentView:View{
                             .cornerRadius(40)
                         }.buttonStyle(PlainButtonStyle()).padding()
                             .simultaneousGesture(TapGesture().onEnded{
-                                let first_beacon = self.settings.currentBeaconList.first!
-                                let last_beacon = self.settings.currentBeaconList.last!
-                                self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: first_beacon.latitude, longitude: first_beacon.longitude), dest: CLLocationCoordinate2D(latitude:last_beacon.latitude, longitude: last_beacon.longitude))
+                                if(self.settings.tourVisitBeaconIndex == -1) {
+                                    self.settings.tourVisitBeaconIndex = 0
+                                }
+                                if(self.settings.tourVisitBeaconIndex < self.settings.currentBeaconList.count - 1){
+                                    let first_beacon = self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex]
+                                    let last_beacon = self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex + 1]
+                                    self.settings.requestRoute(start: CLLocationCoordinate2D(latitude: first_beacon.latitude, longitude: first_beacon.longitude), dest: CLLocationCoordinate2D(latitude:last_beacon.latitude, longitude: last_beacon.longitude))
+                                }
                             })
                         
                         //cancel the tour
@@ -67,6 +72,7 @@ struct Tab1ContentView:View{
                             .cornerRadius(40)
                         }.buttonStyle(PlainButtonStyle()).padding()
                             .simultaneousGesture(TapGesture().onEnded{
+                                self.settings.tourVisitBeaconIndex = 0
                                 self.settings.UserSelectTourRoute = nil
                             })
                         

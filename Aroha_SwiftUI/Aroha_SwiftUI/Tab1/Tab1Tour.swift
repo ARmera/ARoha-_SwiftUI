@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 import AVFoundation
 import Alamofire
+import Mapbox
 
 struct Tab1TourView : View{
     @EnvironmentObject var settings:UserSettings
@@ -44,7 +45,9 @@ struct Tab1TourView : View{
             }
             
             HStack{
-                Text("현재위치: \(log)").frame(maxWidth: .infinity, alignment: .center)
+                Spacer()
+                Text("현재위치: \(self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex].title)").font(Font.custom("HelveticaNeue-Bold", size: 12))
+                Spacer()
                 Button(action: {
                     if let scene = self.settings.scene_instance {
                         let pic = scene.snapshot()
@@ -52,12 +55,26 @@ struct Tab1TourView : View{
                     }else{
                     }
                 }){
-                    Text("스탬프 인식").foregroundColor(.black)
-                        .frame(width : 100,alignment: .trailing)
-                }.padding()
-            }
-            //Image(uiImage: self.settings.test).frame(width: 100, height: 100, alignment: .center)
-            AR_MaPWebView( request: URLRequest(url: URL(string : "https://ar.konk.uk/kdh/rsync/map.html")!))
+                    HStack{
+                        Image("stamp").resizable().frame(width: 12, height: 12, alignment: .center)
+                        Text("스탬프 인식").font(Font.custom("HelveticaNeue-Bold", size: 12)).foregroundColor(Color("Primary"))
+                    }.padding().border(Color("Primary")).cornerRadius(20)
+                }
+                
+                Button(action: {
+                    if(self.settings.tourVisitBeaconIndex < self.settings.currentBeaconList.count-1) {self.settings.tourVisitBeaconIndex += 1};
+                }){
+                    HStack{
+                        Image(systemName: "hand.point.right.fill").resizable().frame(width: 12, height: 12, alignment: .center).foregroundColor(Color("Primary"))
+                        Text("다음 위치").font(Font.custom("HelveticaNeue-Bold", size: 12)).foregroundColor(Color("Primary"))
+                    }.padding().border(Color("Primary")).cornerRadius(20)
+                }
+                Spacer()
+            }.border(Color.gray)
+            //37.5407667,127.0771541
+            TourMapView(annotations: self.settings.tourVisitBeaconIndex < self.settings.currentBeaconList.count - 1 ? [CustomPointAnnotation(coordinate: CLLocationCoordinate2D(latitude: self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex].latitude, longitude: self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex].longitude), title: self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex].title, index: self.settings.tourVisitBeaconIndex),CustomPointAnnotation(coordinate: CLLocationCoordinate2D(latitude: self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex+1].latitude, longitude: self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex+1].longitude), title: self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex+1].title, index: self.settings.tourVisitBeaconIndex+1)]: [CustomPointAnnotation(coordinate: CLLocationCoordinate2D(latitude: self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex].latitude, longitude: self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex].longitude), title: self.settings.currentBeaconList[self.settings.tourVisitBeaconIndex].title, index: self.settings.tourVisitBeaconIndex)])
+                .centerCoordinate(CLLocationCoordinate2D(latitude: 37.5407667 , longitude: 127.0771541))
+                .zoomLevel(14)
         }
         
     }
@@ -81,6 +98,7 @@ struct Tab1TourView : View{
         }, to: url).responseString { response in
             switch response.result{
             case .success:
+                print(response.result)
                 self.showStamp = true
                 return
             default : return
