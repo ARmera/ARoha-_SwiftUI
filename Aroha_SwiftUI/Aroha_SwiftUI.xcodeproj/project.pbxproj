@@ -27,6 +27,7 @@
 		288173E124FA8DD000EBA564 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288173E024FA8DD000EBA564 /* AboutView.swift */; };
 		2897154F2515C0BB00BCBD33 /* TourMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897154E2515C0BB00BCBD33 /* TourMapView.swift */; };
 		28BB36C8250224DE00722FE0 /* MapViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB36C7250224DE00722FE0 /* MapViewSettings.swift */; };
+		28CBF5B52529AE54006A65E6 /* 12.dae in Resources */ = {isa = PBXBuildFile; fileRef = 28CBF5B42529AE54006A65E6 /* 12.dae */; };
 		28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */; };
 		28CDF7F224CC2543000EF9E9 /* AR&MapWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */; };
 		28CDF7F424CC3198000EF9E9 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7F324CC3198000EF9E9 /* ARSceneView.swift */; };
@@ -95,6 +96,7 @@
 		288173E024FA8DD000EBA564 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		2897154E2515C0BB00BCBD33 /* TourMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourMapView.swift; sourceTree = "<group>"; };
 		28BB36C7250224DE00722FE0 /* MapViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSettings.swift; sourceTree = "<group>"; };
+		28CBF5B42529AE54006A65E6 /* 12.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = 12.dae; sourceTree = "<group>"; };
 		28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Tour.swift; sourceTree = "<group>"; };
 		28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AR&MapWebView.swift"; sourceTree = "<group>"; };
 		28CDF7F324CC3198000EF9E9 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,13 @@
 			path = ETC;
 			sourceTree = "<group>";
 		};
+		28CBF5982529A54B006A65E6 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
 		28D58F7424CBEF8B0089C134 = {
 			isa = PBXGroup;
 			children = (
@@ -240,9 +249,11 @@
 			children = (
 				280A8F8324E91EB800C4AD46 /* materials.mtl */,
 				280A8F8124E7D21000C4AD46 /* KU.dae */,
+				28CBF5B42529AE54006A65E6 /* 12.dae */,
 				28D58FB624CC02DF0089C134 /* UserSetting.swift */,
 				28D58F8024CBEF8B0089C134 /* AppDelegate.swift */,
 				28BB36C7250224DE00722FE0 /* MapViewSettings.swift */,
+				28CBF5982529A54B006A65E6 /* resource */,
 				288173C824FA19DB00EBA564 /* Font */,
 				28468B2224E188470098AD96 /* Pretreatment */,
 				28468B1F24E1798E0098AD96 /* API */,
@@ -482,6 +493,7 @@
 				288173DC24FA748D00EBA564 /* BMJUA_otf.otf in Resources */,
 				28D58F8D24CBEF8D0089C134 /* LaunchScreen.storyboard in Resources */,
 				28D58F8A24CBEF8D0089C134 /* Preview Assets.xcassets in Resources */,
+				28CBF5B52529AE54006A65E6 /* 12.dae in Resources */,
 				280A8F8424E91EB800C4AD46 /* materials.mtl in Resources */,
 				28D58F8724CBEF8D0089C134 /* Assets.xcassets in Resources */,
 			);
