@@ -22,7 +22,8 @@ var AllRouteInfo:[RouteInfo] = [RouteInfo]()
 var AllBeaconInfo:[BeaconSummaryInfo] = [BeaconSummaryInfo]()
 //TodaysWeather : 서버에서 가지고 온 오늘의 날씨
 var TodaysWeather:WeatherInfo = WeatherInfo(weather: "", dust: "")
-
+//updateProperty : Property Update
+var updateProperty:Bool = false
 
 class UserSettings:ObservableObject{
     //scene_instance : scene 관리
@@ -40,7 +41,8 @@ class UserSettings:ObservableObject{
     //currentRouteProperties : 현재 route의 Point의 properties(turntype) 배열
     @Published var currentRouteProperties:[[String:Any]] = [[String:Any]](){
         didSet{
-            print(currentRouteProperties)
+            updateProperty = true
+            print("current : \(currentRouteProperties.count)")
         }
     }
     
