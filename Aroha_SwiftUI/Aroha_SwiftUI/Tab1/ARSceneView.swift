@@ -16,6 +16,8 @@ struct ARSceneViewHolder: UIViewRepresentable {
     var scene = SceneLocationView()
     var locationManager = CLLocationManager()
     var correctDirectionGuide = SCNNode()
+    var nodePositionLabel: UILabel! = UILabel()
+
     @State var sign_num : Int = 0;
     @EnvironmentObject var settings:UserSettings
     @Binding var log:String
@@ -26,6 +28,7 @@ struct ARSceneViewHolder: UIViewRepresentable {
         self.settings.scene_instance = scene
         locationManager.startUpdatingHeading()
         locationManager.delegate = context.coordinator
+        scene.locationNodeTouchDelegate = context.coordinator
         GPSSetting()
         scene.run()
         return scene
@@ -34,26 +37,65 @@ struct ARSceneViewHolder: UIViewRepresentable {
     //부모 uiView가 업데이트 되면 호출 됨.
     func updateUIView(_ uiView: SCNView, context: Context) {
         if updateProperty{
-            print("updateProperty")
-            for item in self.settings.currentRouteProperties{
-                print("current turntype : \(item["description"])")
-            }
             for item in (uiView as! SceneLocationView).locationNodes{
                 (uiView as! SceneLocationView).removeLocationNode(locationNode: item)
             }
+            for item in AllBeaconInfo{
+                print(item.title)
+                let coordinate = CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)
+                let location = CLLocation(coordinate: coordinate, altitude: 50)
+                let location2 = CLLocation(coordinate: coordinate, altitude: 80)
+                let image = UIImage(named: "scenepin.png")!
+                let annotationNode = LocationAnnotationNode(location: location, image:image)
+                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
+                label.text = "\(item.title)"
+                label.font = UIFont(name: "BMJUA", size: 20)
+                label.backgroundColor = UIColor(displayP3Red: 255, green: 255, blue: 255, alpha: 0.5)
+
+                label.textColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 1)
+                label.textAlignment = .center
+                let annotationNode2 = LocationAnnotationNode(location: location2, view: label)
+                (uiView as! SceneLocationView).addLocationNodesWithConfirmedLocation(locationNodes: [annotationNode,annotationNode2])
+            }
+            
             self.sign_num = 0;
-            print("initial rendering")
             //showARObject(scene: uiView as! SceneLocationView,index: 0)
             showARObject(scene: uiView as! SceneLocationView,index: 1)
             self.sign_num = 1
             print("uiView \(uiView as! SceneLocationView)")
             updateProperty = false
         }
+        
+//        if updateUILabel{
+//            print("updateUILabel")
+//            let coordinate = CLLocationCoordinate2D(latitude: LabelCoordinate.latitude, longitude: LabelCoordinate.longitude)
+//            let location = CLLocation(coordinate: coordinate, altitude:60)
+//            let image = UIImage(systemName: "pin.fill")!
+//            //image.text = UILabelString
+//            let annotationNode = LocationAnnotationNode(location: location, image: image)
+//            (uiView as! SceneLocationView).addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
+//            updateUILabel = false
+//        }
     }
     
-    final class Coordinator:NSObject,SceneLocationViewDelegate,CLLocationManagerDelegate{
-        var parent: ARSceneViewHolder
+    final class Coordinator:NSObject,SceneLocationViewDelegate,CLLocationManagerDelegate,LNTouchDelegate{
+        func locationNodeTouched(node: LocationNode) {
+        }
         
+        
+        func annotationNodeTouched(node: AnnotationNode) {
+            if let node = node.parent as? LocationNode{
+                let coords = "\(node.location.coordinate.latitude.short)° \(node.location.coordinate.longitude.short)°"
+                let altitude = "\(node.location.altitude.short)m"
+                let tag = node.tag ?? ""
+                LabelCoordinate = node.location.coordinate
+                UILabelString = " Annotation node at \(coords), \(altitude) - \(tag)"
+                updateUILabel = true
+            }
+        }
+        
+        var parent: ARSceneViewHolder
+
         init(_ parent:ARSceneViewHolder){
             self.parent = parent
             self.parent.txtSCN.firstMaterial?.diffuse.contents = UIColor.black
@@ -64,7 +106,10 @@ struct ARSceneViewHolder: UIViewRepresentable {
         func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
             
             if self.parent.settings.currentRouteList.count == 0 {return}
-            let current = self.parent.locationManager.location!.coordinate
+            guard let location = self.parent.locationManager.location else{
+                return
+            }
+            let current = location.coordinate
             let current_pos = Pos(current.latitude, current.longitude)
             let compare = newHeading.trueHeading - 360;
             

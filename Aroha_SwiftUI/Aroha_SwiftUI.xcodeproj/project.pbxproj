@@ -26,6 +26,7 @@
 		288173DE24FA8D4D00EBA564 /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288173DD24FA8D4D00EBA564 /* RouteInfo.swift */; };
 		288173E124FA8DD000EBA564 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288173E024FA8DD000EBA564 /* AboutView.swift */; };
 		2897154F2515C0BB00BCBD33 /* TourMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897154E2515C0BB00BCBD33 /* TourMapView.swift */; };
+		28B37B38253191E600B2D2BE /* scenepin.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B37B37253191E600B2D2BE /* scenepin.png */; };
 		28BB36C8250224DE00722FE0 /* MapViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB36C7250224DE00722FE0 /* MapViewSettings.swift */; };
 		28CBF5B52529AE54006A65E6 /* 12.dae in Resources */ = {isa = PBXBuildFile; fileRef = 28CBF5B42529AE54006A65E6 /* 12.dae */; };
 		28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */; };
@@ -95,6 +96,7 @@
 		288173DD24FA8D4D00EBA564 /* RouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
 		288173E024FA8DD000EBA564 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		2897154E2515C0BB00BCBD33 /* TourMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourMapView.swift; sourceTree = "<group>"; };
+		28B37B37253191E600B2D2BE /* scenepin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scenepin.png; sourceTree = "<group>"; };
 		28BB36C7250224DE00722FE0 /* MapViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSettings.swift; sourceTree = "<group>"; };
 		28CBF5B42529AE54006A65E6 /* 12.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = 12.dae; sourceTree = "<group>"; };
 		28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Tour.swift; sourceTree = "<group>"; };
@@ -218,6 +220,10 @@
 		28CBF5982529A54B006A65E6 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				28B37B37253191E600B2D2BE /* scenepin.png */,
+				280A8F8324E91EB800C4AD46 /* materials.mtl */,
+				280A8F8124E7D21000C4AD46 /* KU.dae */,
+				28CBF5B42529AE54006A65E6 /* 12.dae */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -247,9 +253,6 @@
 		28D58F7F24CBEF8B0089C134 /* Aroha_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				280A8F8324E91EB800C4AD46 /* materials.mtl */,
-				280A8F8124E7D21000C4AD46 /* KU.dae */,
-				28CBF5B42529AE54006A65E6 /* 12.dae */,
 				28D58FB624CC02DF0089C134 /* UserSetting.swift */,
 				28D58F8024CBEF8B0089C134 /* AppDelegate.swift */,
 				28BB36C7250224DE00722FE0 /* MapViewSettings.swift */,
@@ -488,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				288173DA24FA73D100EBA564 /* BMJUA_ttf.ttf in Resources */,
+				28B37B38253191E600B2D2BE /* scenepin.png in Resources */,
 				280A8F8224E7D21000C4AD46 /* KU.dae in Resources */,
 				288173D524FA6FDE00EBA564 /* Spoqa Han Sans Regular.ttf in Resources */,
 				288173DC24FA748D00EBA564 /* BMJUA_otf.otf in Resources */,

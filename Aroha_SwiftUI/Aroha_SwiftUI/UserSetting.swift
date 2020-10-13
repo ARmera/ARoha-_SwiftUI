@@ -24,7 +24,9 @@ var AllBeaconInfo:[BeaconSummaryInfo] = [BeaconSummaryInfo]()
 var TodaysWeather:WeatherInfo = WeatherInfo(weather: "", dust: "")
 //updateProperty : Property Update
 var updateProperty:Bool = false
-
+var updateUILabel:Bool = false
+var UILabelString:String = ""
+var LabelCoordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
 class UserSettings:ObservableObject{
     //scene_instance : scene 관리
     @Published var scene_instance:SceneLocationView?;

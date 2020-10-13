@@ -8,7 +8,7 @@
 
 import Foundation
 import SwiftUI
-
+import UIKit
 
 struct RoundedCorner: Shape {
     
@@ -32,3 +32,4 @@ struct GradientBackgroundStyle: ButtonStyle {
             .padding(.horizontal, 20)
     }
 }
+
