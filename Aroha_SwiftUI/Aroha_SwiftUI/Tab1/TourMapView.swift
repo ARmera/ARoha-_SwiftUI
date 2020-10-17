@@ -69,6 +69,8 @@ struct TourMapView: UIViewRepresentable {
         guard let style = style else { return }
         let randomIdentifier = randomString(length: 8)
         let geoJson:Data? = test
+        
+        if(geoJson == nil) {return}
         guard let shapeFromGeoJSON = try? MGLShape(data: geoJson!, encoding: String.Encoding.utf8.rawValue) else {
             fatalError("Could not generate MGLShape")
         }

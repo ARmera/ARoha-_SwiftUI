@@ -18,23 +18,50 @@ struct Tab1TourView : View{
     @State var showStamp = false
     @State var showdirection:[Bool] = [false,false]
     @State var building_num = 0
+    @State var customMode:Bool = false
+    @State var imgNum:Int = 0
+    @State var distance:String = ""
     var body:some View{
         VStack{
             ZStack{
-                ARSceneViewHolder(log: $log, showDirection: $showdirection)
-                HStack{
-                    if showdirection[1]{
-                        Image(systemName: "chevron.left.2")
-                            .foregroundColor(Color.blue)
-                        .frame(width: 50, height: 50, alignment: .center)
+                ZStack(alignment: .top){
+                    if(!customMode){
+                        ARSceneViewHolder(log: $log, showDirection: $showdirection)
+//                        HStack{
+//                            if showdirection[1]{
+//                                Image(systemName: "chevron.left.2")
+//                                    .foregroundColor(Color.blue)
+//                                .frame(width: 50, height: 50, alignment: .center)
+//                            }
+//                            Spacer()
+//                            if showdirection[0]{
+//                                Image(systemName: "chevron.right.2")
+//                                    .foregroundColor(Color.blue)
+//                                .frame(width: 50, height: 50, alignment: .center)
+//                            }
+//                        }
                     }
-                    Spacer()
-                    if showdirection[0]{
-                        Image(systemName: "chevron.right.2")
-                            .foregroundColor(Color.blue)
-                        .frame(width: 50, height: 50, alignment: .center)
+                    else{
+                        ARSceneViewHolder2(imgNum: self.$imgNum, distance: self.$distance)
+                        HStack{
+                            HStack{
+                                Image("\(imgNum)").resizable().frame(width: 50, height: 50, alignment: .center).padding()
+                                Text("\(distance)")
+                            }
+                            Spacer()
+                        }
                     }
-                    
+                    HStack(alignment: .top){
+                        Spacer()
+                        Button(action: {
+                            updateProperty = true
+                            self.customMode.toggle()
+                        }){
+                            Image(systemName: "arrow.2.circlepath").frame(width: 50, height: 50, alignment: .center)
+                                .background(Color("blue200"))
+                        }
+                    }
+
                 }
                 if showStamp{
                     HStack{

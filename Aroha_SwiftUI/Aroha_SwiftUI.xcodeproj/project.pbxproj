@@ -13,6 +13,8 @@
 		280A8F8624EA6E8E00C4AD46 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A8F8524EA6E8E00C4AD46 /* ImageLoader.swift */; };
 		280A8F8824EA6FAE00C4AD46 /* StampImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A8F8724EA6FAE00C4AD46 /* StampImageView.swift */; };
 		28247C1C24DE6BE200F89AAA /* Pos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28247C1B24DE6BE200F89AAA /* Pos.swift */; };
+		28341E25253ACAC600BEE8BF /* scenepin.png in Resources */ = {isa = PBXBuildFile; fileRef = 28341E24253ACAC600BEE8BF /* scenepin.png */; };
+		28341E30253AFFC600BEE8BF /* ARSceneView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28341E2F253AFFC600BEE8BF /* ARSceneView2.swift */; };
 		2844017925025BFD0055DB47 /* BeaconDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844017825025BFD0055DB47 /* BeaconDetailView.swift */; };
 		2844017B25027D260055DB47 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2844017A25027D250055DB47 /* GridLayout.swift */; };
 		28468B2124E179B00098AD96 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28468B2024E179B00098AD96 /* HttpRequest.swift */; };
@@ -26,7 +28,6 @@
 		288173DE24FA8D4D00EBA564 /* RouteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288173DD24FA8D4D00EBA564 /* RouteInfo.swift */; };
 		288173E124FA8DD000EBA564 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288173E024FA8DD000EBA564 /* AboutView.swift */; };
 		2897154F2515C0BB00BCBD33 /* TourMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897154E2515C0BB00BCBD33 /* TourMapView.swift */; };
-		28B37B38253191E600B2D2BE /* scenepin.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B37B37253191E600B2D2BE /* scenepin.png */; };
 		28BB36C8250224DE00722FE0 /* MapViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB36C7250224DE00722FE0 /* MapViewSettings.swift */; };
 		28CBF5B52529AE54006A65E6 /* 12.dae in Resources */ = {isa = PBXBuildFile; fileRef = 28CBF5B42529AE54006A65E6 /* 12.dae */; };
 		28CDF7F024CC24AE000EF9E9 /* Tab1Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */; };
@@ -83,6 +84,8 @@
 		280A8F8524EA6E8E00C4AD46 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		280A8F8724EA6FAE00C4AD46 /* StampImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampImageView.swift; sourceTree = "<group>"; };
 		28247C1B24DE6BE200F89AAA /* Pos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pos.swift; sourceTree = "<group>"; };
+		28341E24253ACAC600BEE8BF /* scenepin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scenepin.png; sourceTree = "<group>"; };
+		28341E2F253AFFC600BEE8BF /* ARSceneView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView2.swift; sourceTree = "<group>"; };
 		2844017825025BFD0055DB47 /* BeaconDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeaconDetailView.swift; sourceTree = "<group>"; };
 		2844017A25027D250055DB47 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		28468B2024E179B00098AD96 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; wrapsLines = 0; };
@@ -96,7 +99,6 @@
 		288173DD24FA8D4D00EBA564 /* RouteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInfo.swift; sourceTree = "<group>"; };
 		288173E024FA8DD000EBA564 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		2897154E2515C0BB00BCBD33 /* TourMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourMapView.swift; sourceTree = "<group>"; };
-		28B37B37253191E600B2D2BE /* scenepin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scenepin.png; sourceTree = "<group>"; };
 		28BB36C7250224DE00722FE0 /* MapViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewSettings.swift; sourceTree = "<group>"; };
 		28CBF5B42529AE54006A65E6 /* 12.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = 12.dae; sourceTree = "<group>"; };
 		28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab1Tour.swift; sourceTree = "<group>"; };
@@ -220,7 +222,7 @@
 		28CBF5982529A54B006A65E6 /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				28B37B37253191E600B2D2BE /* scenepin.png */,
+				28341E24253ACAC600BEE8BF /* scenepin.png */,
 				280A8F8324E91EB800C4AD46 /* materials.mtl */,
 				280A8F8124E7D21000C4AD46 /* KU.dae */,
 				28CBF5B42529AE54006A65E6 /* 12.dae */,
@@ -324,6 +326,7 @@
 				28CED98E25107F5B00A0AB5F /* Tab1SelectRouteView.swift */,
 				28CED9902510822A00A0AB5F /* RouteCardView.swift */,
 				2897154E2515C0BB00BCBD33 /* TourMapView.swift */,
+				28341E2F253AFFC600BEE8BF /* ARSceneView2.swift */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";
@@ -491,7 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				288173DA24FA73D100EBA564 /* BMJUA_ttf.ttf in Resources */,
-				28B37B38253191E600B2D2BE /* scenepin.png in Resources */,
+				28341E25253ACAC600BEE8BF /* scenepin.png in Resources */,
 				280A8F8224E7D21000C4AD46 /* KU.dae in Resources */,
 				288173D524FA6FDE00EBA564 /* Spoqa Han Sans Regular.ttf in Resources */,
 				288173DC24FA748D00EBA564 /* BMJUA_otf.otf in Resources */,
@@ -638,6 +641,7 @@
 				28BB36C8250224DE00722FE0 /* MapViewSettings.swift in Sources */,
 				28E2BD3824FA99C10018F8A3 /* SearchSheetView.swift in Sources */,
 				28468B2124E179B00098AD96 /* HttpRequest.swift in Sources */,
+				28341E30253AFFC600BEE8BF /* ARSceneView2.swift in Sources */,
 				28D58FCB24CC0E7B0089C134 /* Tab4Main.swift in Sources */,
 				28D58F8324CBEF8B0089C134 /* SceneDelegate.swift in Sources */,
 				28D58FB124CBF2B50089C134 /* LoginView.swift in Sources */,

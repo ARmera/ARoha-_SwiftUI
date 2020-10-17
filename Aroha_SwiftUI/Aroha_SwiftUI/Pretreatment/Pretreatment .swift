@@ -62,11 +62,19 @@ func convertTitle2Img(kor:String)->String{
     case "이과대학":
         return "art"
     case "신공학관":
-        return "business"
+        return "new_engineering"
     case "와우도":
         return "commerce"
     case "황소상":
+        return "animal"
+    case "학생회관":
+        return "student_council"
+    case "황소상":
         return "craft"
+    case "새천년관":
+        return "newmillenium"
+    case "법학관":
+        return "law"
     default:
         return "ecampus"
     }
@@ -149,4 +157,14 @@ extension Double {
     func toString() -> String {
         return String(format: "%.1f",self)
     }
+}
+
+func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+    let scale = newWidth / image.size.width // 새 이미지 확대/축소 비율
+    let newHeight = image.size.height * scale
+    UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+    image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return newImage!
 }

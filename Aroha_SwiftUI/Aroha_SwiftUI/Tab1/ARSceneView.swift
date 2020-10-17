@@ -163,7 +163,7 @@ struct ARSceneViewHolder: UIViewRepresentable {
         
         let turntype = self.settings.currentRouteProperties[index]["turnType"] as! Int
         
-        let locationNode = LocationNode(location: CLLocation(coordinate: CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng), altitude: 10))
+        let locationNode = LocationNode(location: CLLocation(coordinate: CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng), altitude: 15))
         
         if let currentFrame  = self.scene.session.currentFrame {
             let rotate = simd_float4x4(SCNMatrix4MakeRotation(currentFrame.camera.eulerAngles.y, 0, 1, 0))
@@ -194,7 +194,7 @@ struct ARSceneViewHolder: UIViewRepresentable {
         
         let turntype = self.settings.currentRouteProperties[index]["turnType"] as! Int
         
-        let locationNode = LocationNode(location: CLLocation(coordinate: CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng), altitude: 10))
+        let locationNode = LocationNode(location: CLLocation(coordinate: CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng), altitude: 15))
         
         if let currentFrame  = self.scene.session.currentFrame {
             let rotate = simd_float4x4(SCNMatrix4MakeRotation(currentFrame.camera.eulerAngles.y, 0, 1, 0))
@@ -208,8 +208,12 @@ struct ARSceneViewHolder: UIViewRepresentable {
         print("make \(makeSigneNode(turntype: turntype))")
         print("make \(makeAnimationNode())")
         print("make \(makeTextNode(txtSCN: txtSCN))")
+        //var image = UIImage(named: "\(turntype)")!
+        let image = resizeImage(image: UIImage(named: "\(turntype)")!, newWidth: 150)
+        print("preimage \(UIImage(named: "\(turntype)")!)")
+        print("image \(image)")
         scene.addLocationNodeWithConfirmedLocation(locationNode: locationNode)
-        scene.addLocationNodeWithConfirmedLocation(locationNode: LocationAnnotationNode(location: CLLocation(coordinate: CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng), altitude: 15), image: UIImage(named: "\(turntype)")!))
+        scene.addLocationNodeWithConfirmedLocation(locationNode: LocationAnnotationNode(location: CLLocation(coordinate: CLLocationCoordinate2D(latitude: position.lat, longitude: position.lng), altitude: 15), image: image))
         scene.autoenablesDefaultLighting = true
     }
     
@@ -233,8 +237,8 @@ struct ARSceneViewHolder: UIViewRepresentable {
         let material = SCNMaterial()
         let shape = tempScene.rootNode
         shape.childNode(withName: "model", recursively: true)
-        shape.scale = SCNVector3(7, 7, 7)
-        shape.position = SCNVector3(0,-50,0);
+        shape.scale = SCNVector3(4, 4, 4)
+        shape.position = SCNVector3(0,0,0);
         material.diffuse.contents = UIImage(named : "1")
         shape.geometry?.firstMaterial = material
         return shape
@@ -245,19 +249,18 @@ struct ARSceneViewHolder: UIViewRepresentable {
         let tempScene = SCNScene(named:"12.dae")!
         let material = SCNMaterial()
         let shape = tempScene.rootNode
-        shape.scale = SCNVector3(7, 7, 7)
-        shape.position = SCNVector3(0,-20,0);
+        shape.scale = SCNVector3(3, 3, 3)
+        shape.position = SCNVector3(0,0,0);
         material.diffuse.contents = UIImage(named : "1")
         shape.geometry?.firstMaterial = material
         return shape
-        //return planeNode
     }
     
     //텍스트 만들어줌
     func makeTextNode(txtSCN : SCNText) -> SCNNode{
         let boxNode = SCNNode(geometry: txtSCN)
-        boxNode.scale = SCNVector3(1,1,1)
-        boxNode.position = SCNVector3(0,-10,0)
+        boxNode.scale = SCNVector3(0.2,0.2,0.2)
+        boxNode.position = SCNVector3(0,0,0)
         return boxNode;
     }
     

@@ -31,7 +31,6 @@ struct Tab3MainView:View{
                                 }
                         }
                     )
-
                 }
             }
             
