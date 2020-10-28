@@ -317,16 +317,16 @@
 		28D58FC024CC0D9F0089C134 /* Tab1 */ = {
 			isa = PBXGroup;
 			children = (
-				28D58FC124CC0DBF0089C134 /* Tab1Main.swift */,
-				28D58FCC24CC175A0089C134 /* SnapCarousel.swift */,
-				28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */,
 				28CDF7F124CC2543000EF9E9 /* AR&MapWebView.swift */,
 				28CDF7F324CC3198000EF9E9 /* ARSceneView.swift */,
-				280A8F8724EA6FAE00C4AD46 /* StampImageView.swift */,
-				28CED98E25107F5B00A0AB5F /* Tab1SelectRouteView.swift */,
-				28CED9902510822A00A0AB5F /* RouteCardView.swift */,
-				2897154E2515C0BB00BCBD33 /* TourMapView.swift */,
 				28341E2F253AFFC600BEE8BF /* ARSceneView2.swift */,
+				28CED9902510822A00A0AB5F /* RouteCardView.swift */,
+				28D58FCC24CC175A0089C134 /* SnapCarousel.swift */,
+				280A8F8724EA6FAE00C4AD46 /* StampImageView.swift */,
+				28D58FC124CC0DBF0089C134 /* Tab1Main.swift */,
+				28CED98E25107F5B00A0AB5F /* Tab1SelectRouteView.swift */,
+				28CDF7EF24CC24AE000EF9E9 /* Tab1Tour.swift */,
+				2897154E2515C0BB00BCBD33 /* TourMapView.swift */,
 			);
 			path = Tab1;
 			sourceTree = "<group>";

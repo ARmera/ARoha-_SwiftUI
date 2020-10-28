@@ -74,6 +74,7 @@ struct Tab1ContentView:View{
                             .simultaneousGesture(TapGesture().onEnded{
                                 self.settings.tourVisitBeaconIndex = 0
                                 self.settings.UserSelectTourRoute = nil
+                                self.settings.sign_num = 1
                             })
                         
                     }

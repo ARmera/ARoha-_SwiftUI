@@ -135,9 +135,9 @@ struct PopUpStamp:View{
                 Spacer().frame(height:20)
                 VStack{
                     Text("방문 날짜").font(Font.custom("BMJUA", size: 15)).padding(5)
-                    Text("2020년 9월 2일").font(Font.custom("SpoqaHanSans-Regular", size: 12))
+                    Text("2020년 10월 23일").font(Font.custom("SpoqaHanSans-Regular", size: 12))
                     Text("방문 시간").font(Font.custom("BMJUA", size: 15)).padding(5)
-                    Text("오후 2시 23분").font(Font.custom("SpoqaHanSans-Regular", size: 12))
+                    Text("오후 12시 28분").font(Font.custom("SpoqaHanSans-Regular", size: 12))
                 }
                 
             }.padding(.horizontal,10)

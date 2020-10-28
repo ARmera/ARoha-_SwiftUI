@@ -18,7 +18,6 @@ struct ARSceneViewHolder: UIViewRepresentable {
     var correctDirectionGuide = SCNNode()
     var nodePositionLabel: UILabel! = UILabel()
 
-    @State var sign_num : Int = 0;
     @EnvironmentObject var settings:UserSettings
     @Binding var log:String
     @Binding var showDirection:[Bool]
@@ -58,10 +57,8 @@ struct ARSceneViewHolder: UIViewRepresentable {
                 (uiView as! SceneLocationView).addLocationNodesWithConfirmedLocation(locationNodes: [annotationNode,annotationNode2])
             }
             
-            self.sign_num = 0;
             //showARObject(scene: uiView as! SceneLocationView,index: 0)
             showARObject(scene: uiView as! SceneLocationView,index: 1)
-            self.sign_num = 1
             print("uiView \(uiView as! SceneLocationView)")
             updateProperty = false
         }
@@ -114,13 +111,13 @@ struct ARSceneViewHolder: UIViewRepresentable {
             let compare = newHeading.trueHeading - 360;
             
             //적절한 위치입니다.
-            if abs(compare - current_pos.getBearingBetweenTwoPoints1(point2: self.parent.settings.currentRouteList[self.parent.sign_num])) <= 20.0{
+            if abs(compare - current_pos.getBearingBetweenTwoPoints1(point2: self.parent.settings.currentRouteList[self.parent.settings.sign_num])) <= 20.0{
                 self.parent.showDirection[0] = false
                 self.parent.showDirection[1] = false
             }
             else{
                 //오른쪽
-                if(abs(compare - current_pos.getBearingBetweenTwoPoints1(point2: self.parent.settings.currentRouteList[self.parent.sign_num])) > 180){
+                if(abs(compare - current_pos.getBearingBetweenTwoPoints1(point2: self.parent.settings.currentRouteList[self.parent.settings.sign_num])) > 180){
                     self.parent.showDirection[0] = false
                     self.parent.showDirection[1] = true
                 }
@@ -140,15 +137,15 @@ struct ARSceneViewHolder: UIViewRepresentable {
                 //크기 업데이트
                 //initial rendering
                 //보여지고 있는 표지판
-                if self.parent.sign_num >= self.parent.settings.currentRouteList.count {return}
-                let sign = self.parent.settings.currentRouteList[self.parent.sign_num]
+                if self.parent.settings.sign_num >= self.parent.settings.currentRouteList.count {return}
+                let sign = self.parent.settings.currentRouteList[self.parent.settings.sign_num]
                 //let description = self.parent.settings.currentRouteProperties[self.parent.sign_num]["description"]
                 //내 거리와 표지판 사이의 거리
                 let distance = sign.calcDistance(pos: Pos(coor.latitude, coor.longitude))
                 
-                if distance <= 3 && self.parent.sign_num<self.parent.settings.currentRouteList.count-1{
-                    self.parent.sign_num += 1
-                    self.parent.showARObject(index: self.parent.sign_num)
+                if distance <= 10 && self.parent.settings.sign_num<self.parent.settings.currentRouteList.count-1{
+                    self.parent.settings.sign_num += 1
+                    self.parent.showARObject(index: self.parent.settings.sign_num)
                 };
                 self.parent.txtSCN.string = "\(String(format:"%.2f",distance)) m"
             }

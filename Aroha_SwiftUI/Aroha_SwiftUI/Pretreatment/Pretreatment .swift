@@ -69,14 +69,14 @@ func convertTitle2Img(kor:String)->String{
         return "animal"
     case "학생회관":
         return "student_council"
-    case "황소상":
-        return "craft"
     case "새천년관":
         return "newmillenium"
     case "법학관":
         return "law"
+    case "산학협동관":
+        return "study"
     default:
-        return "ecampus"
+        return "museum"
     }
 }
 

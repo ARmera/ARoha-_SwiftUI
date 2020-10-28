@@ -42,7 +42,7 @@ struct SnapCarousel: View {
                                     .font(Font.custom("SpoqaHanSans-Regular", size: 10))
                                 }
                                 //MARK: -하드코딩
-                                if((item as BeaconInfo).index < 2){
+                                if((item as BeaconInfo).index < 4){
                                     Text("Clear")
                                         .font(.headline)
                                         .padding()

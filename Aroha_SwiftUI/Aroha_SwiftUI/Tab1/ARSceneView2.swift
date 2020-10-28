@@ -23,7 +23,6 @@ struct ARSceneViewHolder2: UIViewRepresentable {
     
     var scene = SceneLocationView()
     var locationManager = CLLocationManager()
-    @State var sign_num = 1
     
     @EnvironmentObject var settings:UserSettings
     @Binding var imgNum:Int
@@ -76,17 +75,17 @@ struct ARSceneViewHolder2: UIViewRepresentable {
             //asyn로 routeList가 전달되지 않았으면
             if let coor = manager.location?.coordinate{
                 if self.parent.settings.currentRouteList.count == 0 {return}
-                if self.parent.sign_num >= self.parent.settings.currentRouteList.count {return}
-                let sign = self.parent.settings.currentRouteList[self.parent.sign_num]
+                if self.parent.settings.sign_num >= self.parent.settings.currentRouteList.count {return}
+                let sign = self.parent.settings.currentRouteList[self.parent.settings.sign_num]
                 let distance = sign.calcDistance(pos: Pos(coor.latitude, coor.longitude))
                 
-                if distance <= 3 && self.parent.sign_num<self.parent.settings.currentRouteList.count-1{
-                    self.parent.sign_num += 1
+                if distance <= 10 && self.parent.settings.sign_num<self.parent.settings.currentRouteList.count-1{
+                    self.parent.settings.sign_num += 1
                 };
                 
                 
                 self.parent.distance = "\(String(format:"%.2f",distance)) m"
-                self.parent.imgNum = self.parent.settings.currentRouteProperties[self.parent.sign_num]["turnType"] as! Int
+                self.parent.imgNum = self.parent.settings.currentRouteProperties[self.parent.settings.sign_num]["turnType"] as! Int
             }
         }
         
