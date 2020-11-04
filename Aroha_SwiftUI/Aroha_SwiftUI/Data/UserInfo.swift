@@ -13,3 +13,7 @@ struct UsersStampInfo:Decodable,Hashable{
     var stamp_status:[Int]
     var stamp_achievement:Int
 }
+
+struct stampCheckInfo:Decodable,Hashable{
+    var result:String
+}

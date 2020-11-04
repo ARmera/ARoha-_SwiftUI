@@ -15,12 +15,13 @@ import Mapbox
 struct Tab1TourView : View{
     @EnvironmentObject var settings:UserSettings
     @State var log:String = "초기값"
-    @State var showStamp = false
+    @State var showStamp = -1
     @State var showdirection:[Bool] = [false,false]
     @State var building_num = 0
     @State var customMode:Bool = false
     @State var imgNum:Int = 0
     @State var distance:String = ""
+    @State var showAlert:Bool = false
     var body:some View{
         VStack{
             ZStack{
@@ -63,7 +64,7 @@ struct Tab1TourView : View{
                     }
 
                 }
-                if showStamp{
+                if showStamp != -1{
                     HStack{
                         Popupview(showPopup: $showStamp)
                             .animation(Animation.easeInOut(duration: 10.0))
@@ -103,60 +104,90 @@ struct Tab1TourView : View{
                 .centerCoordinate(CLLocationCoordinate2D(latitude: 37.5407667 , longitude: 127.0771541))
                 .zoomLevel(14)
         }
+        .alert(isPresented:self.$showAlert){
+            Alert(title: Text("권한 허용 에러"),message: Text("권한을 허용하지 않으면, 투어 기능을 사용할 수 없습니다."),primaryButton: .destructive(Text("재요청"),action: {checkPermission()}), secondaryButton: .cancel())
+        }.onAppear(){
+            checkPermission()
+        }
+        
         
     }
     private func checkPermission(){
+        print("checkPermission")
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
             if response {
+                self.showAlert = false
                 print("response \(response)")
             } else {
                 print("response \(response)")
+                self.showAlert = true
             }
         }
     }
+//    private func uploadImg( _ pic:UIImage){ // 이미지 프로세싱 & 식별을 위해 snapshot을 서버로 전송
+//        let url = "http://api.ar.konk.uk/stamp" // https 일 경우 오류 발생!
+//        let imgData = pic.jpegData(compressionQuality: 0.2)! // compression값이 커질수록 이미지 품질향상.
+//        AF.upload(multipartFormData: { multipartFormData in
+//            multipartFormData.append(Data("test".utf8), withName: "check")
+//            multipartFormData.append(imgData, withName: "image",fileName: "test.jpg", mimeType: "image/jpg")
+//        }, to: url).responseString { response in
+//            switch response.result{
+//            case .success:
+//                print("업로드 이미지 : \(response.result)")
+//                self.showStamp = true
+//                return
+//            default : return
+//            }
+//        }
+//    }
+    
     private func uploadImg( _ pic:UIImage){ // 이미지 프로세싱 & 식별을 위해 snapshot을 서버로 전송
         let url = "http://api.ar.konk.uk/stamp" // https 일 경우 오류 발생!
         let imgData = pic.jpegData(compressionQuality: 0.2)! // compression값이 커질수록 이미지 품질향상.
+        print("이미지 : \(imgData)")
         AF.upload(multipartFormData: { multipartFormData in
-            
             multipartFormData.append(Data("test".utf8), withName: "check")
             multipartFormData.append(imgData, withName: "image",fileName: "test.jpg", mimeType: "image/jpg")
-            
-        }, to: url).responseString { response in
+        }, to: url).responseData{ response in
             switch response.result{
-            case .success:
-                print(response.result)
-                self.showStamp = true
-                return
-            default : return
+            case .success(let value):
+                do{
+                    let response = try JSONDecoder().decode(stampCheckInfo.self, from: value)
+                    print("업로드 이미지 : \(response.result)")
+                    if response.result != "FALSE"{
+                        self.showStamp = Int(atoi(response.result))
+                    }else{
+                        self.showStamp = 0
+                    }
+                }catch{
+                    print("JSONDecoder().decode DecodingError")
+                }
+            case .failure(let error):
+                print("failure \(error)")
             }
         }
     }
 }
 
 struct Popupview:View{
-    @Binding var showPopup:Bool
+    @Binding var showPopup:Int
     var body: some View{
         VStack{
-            Text("스탬프 획득").font(Font.custom("HelveticaNeue-Bold", size: 10))
-                .padding(.horizontal, 10)
-            StampImageView(withURL: URLRoot.ImageSource.rawValue + String(2))
+            if showPopup > 0{
+                Text("스탬프 획득").font(Font.custom("HelveticaNeue-Bold", size: 10))
+                    .padding(.horizontal, 10)
+                StampImageView(withURL: URLRoot.ImageSource.rawValue + String(showPopup))
+            }else if showPopup == 0{
+                Text("해당하는 스탬프가 없습니다").font(Font.custom("HelveticaNeue-Bold", size: 10))
+                    .padding(.horizontal, 10).foregroundColor(.red)
+                Image(systemName: "x.circle.fill")
+            }
         }.onTapGesture {
-            self.showPopup = false
+            self.showPopup = -1
         }
         .padding(.all, 5.0)
         .foregroundColor(Color.black)
-        .background(RoundedRectangle(cornerRadius: 18)
-        .foregroundColor(Color.blue.opacity(0.2)))
+        .background(RoundedRectangle(cornerRadius: 18).foregroundColor(Color("blue200")))
     }
 }
 
-
-
-
-struct Tab1Tour_Previews: PreviewProvider {
-    @State var showpopup = true
-    static var previews: some View {
-        Popupview(showPopup: .constant(true))
-    }
-}

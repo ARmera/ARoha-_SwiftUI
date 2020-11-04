@@ -60,7 +60,7 @@ func convertTitle2Img(kor:String)->String{
     case "입학정보관":
         return "architecture"
     case "이과대학":
-        return "art"
+        return "science"
     case "신공학관":
         return "new_engineering"
     case "와우도":
@@ -75,8 +75,22 @@ func convertTitle2Img(kor:String)->String{
         return "law"
     case "산학협동관":
         return "study"
+    case "상허기념도서관":
+        return "library"
+    case "건국대학교 기숙사":
+        return "kul_house"
+    case "경영관":
+        return "business"
+    case "행정괸":
+        return "main"
+    case "상허박물관":
+        return "museun"
+    case "동물생명과학관":
+        return "pethospital"
+    case "생명과학관":
+        return "medical_science"
     default:
-        return "museum"
+        return "ku"
     }
 }
 

@@ -225,6 +225,8 @@ struct ARSceneViewHolder: UIViewRepresentable {
             //            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
+        }else{
+            print("거부")
         }
     }
     
