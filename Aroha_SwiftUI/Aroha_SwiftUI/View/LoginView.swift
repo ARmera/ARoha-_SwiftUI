@@ -9,6 +9,8 @@
 import Foundation
 import SwiftUI
 import Alamofire
+import KakaoSDKAuth
+
 struct LoginView: View {
     @EnvironmentObject var setting:UserSettings
     @State var width:CGFloat = 0;
@@ -30,7 +32,7 @@ struct LoginView: View {
                     self.height = 200;
                 }
                 Button(action: {
-                    self.setting.isLogin = true
+                    kakaocheck()
                 }){
                     HStack(spacing : 10){
                         Image("kakao-login").resizable()
@@ -39,6 +41,22 @@ struct LoginView: View {
             }.zIndex(1)
         }.edgesIgnoringSafeArea(.all)
         
+    }
+    //MARK: @카카오톡 설치 여부 확인
+    func kakaocheck(){
+        if (AuthApi.isKakaoTalkLoginAvailable()) {
+            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    self.setting.isLogin = true
+                    //do something
+                    _ = oauthToken
+                }
+            }
+        }
     }
     //MARK: @사용자의 정보를 가져오는 함수
     func LoadAllUserInfo(){

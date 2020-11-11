@@ -84,7 +84,7 @@ func convertTitle2Img(kor:String)->String{
     case "행정괸":
         return "main"
     case "상허박물관":
-        return "museun"
+        return "museum"
     case "동물생명과학관":
         return "pethospital"
     case "생명과학관":

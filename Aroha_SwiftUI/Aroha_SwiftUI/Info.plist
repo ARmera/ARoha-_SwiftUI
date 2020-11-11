@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -16,10 +18,62 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakao10512e8c96e636f6a6c94696b00ac0c3</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakaoc59c404479e4fd366ef1a00a8caccd4a</string>
+			</array>
+		</dict>
+		<dict/>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakaokompassauth</string>
+		<string>kakaolink</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoicmxhdDMwMiIsImEiOiJja2U1Y21sbncwN2l5MnluNW1jcjMxZnlxIn0.Ia0j9zrSBmiPvyJUFtkpiA</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) camera use
+
+</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Shows your location on the map and helps improve the map.
+</string>
+	<key>Privacy - Photo Library Additions Usage Description
+</key>
+	<string>$(PRODUCT_NAME) photo use
+
+</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BMJUA_ttf.ttf</string>
+		<string>BMJUA_otf.otf</string>
+		<string>Spoqa Han Sans Regular.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -55,31 +109,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCT_NAME) camera use
-
-</string>
-	<key>Privacy - Photo Library Additions Usage Description
-</key>
-	<string>$(PRODUCT_NAME) photo use
-
-</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Shows your location on the map and helps improve the map.
-</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>MGLMapboxAccessToken</key>
-	<string>pk.eyJ1IjoicmxhdDMwMiIsImEiOiJja2U1Y21sbncwN2l5MnluNW1jcjMxZnlxIn0.Ia0j9zrSBmiPvyJUFtkpiA</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>BMJUA_ttf.ttf</string>
-		<string>BMJUA_otf.otf</string>
-		<string>Spoqa Han Sans Regular.ttf</string>
 	</array>
 </dict>
 </plist>

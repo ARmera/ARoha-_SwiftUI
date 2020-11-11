@@ -24,6 +24,7 @@ struct TourMapView: UIViewRepresentable {
     
     func makeUIView(context: UIViewRepresentableContext<TourMapView>) -> MGLMapView {
         mapView.delegate = context.coordinator
+        mapView.showsUserLocation = true
         return mapView
     }
     

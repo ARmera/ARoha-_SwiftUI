@@ -10,6 +10,8 @@ target 'Aroha_SwiftUI' do
   pod 'Alamofire'
   pod 'ARCL'
   pod 'CocoaLumberjack/Swift'
+  pod 'KakaoSDK'
+
   target 'Aroha_SwiftUITests' do
     inherit! :search_paths
     # Pods for testing

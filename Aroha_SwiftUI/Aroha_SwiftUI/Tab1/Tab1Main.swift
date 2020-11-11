@@ -88,18 +88,19 @@ struct Tab1ContentView:View{
 }
 
 struct TourInfoView:View{
+    @EnvironmentObject var settings:UserSettings
     var body: some View{
         VStack(spacing : 16.0){
             HStack{
                 Text("투어 진행률").font(Font.custom("BMJUA", size: 20))
                 Spacer()
-                Text("82%")
+                Text("\(String(format:"%.2f",Float(self.settings.tourVisitBeaconIndex+1)*100/Float(self.settings.currentBeaconList.count)))%")
             }.padding()
             Divider().frame(height:5)
             HStack{
-                Text("투어 진행률").font(Font.custom("BMJUA", size: 20))
+                Text("클리어한 위치").font(Font.custom("BMJUA", size: 20))
                 Spacer()
-                Text("2개")
+                Text("\(self.settings.tourVisitBeaconIndex+1)개")
             }.padding()
             Divider().frame(height:5)
             HStack{

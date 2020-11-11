@@ -8,6 +8,8 @@
 
 import Foundation
 import SwiftUI
+import KakaoSDKAuth
+import KakaoSDKUser
 
 struct Tab4MainView:View{
     var body:some View{
@@ -18,6 +20,7 @@ struct Tab4MainView:View{
     }
 }
 struct Tab4ContentView:View{
+    @EnvironmentObject var setting:UserSettings
     var body: some View{
         ZStack {
             VStack{
@@ -46,6 +49,15 @@ struct Tab4ContentView:View{
                     
                     //Logout
                     Button(action:{
+                        UserApi.shared.logout {(error) in
+                            if let error = error {
+                                print(error)
+                            }
+                            else {
+                                self.setting.isLogin = false
+                                print("logout() success.")
+                            }
+                        }
                         withAnimation(.easeOut){
                             
                         }
@@ -59,7 +71,6 @@ struct Tab4ContentView:View{
                             Spacer(minLength: 0)
                             Image("chevronRight")
                                 .padding(.trailing, 12)
-                            
                         }
                     }.buttonStyle(PlainButtonStyle())
                 }.padding(.bottom, screenHeight/14.5)

@@ -42,7 +42,7 @@ struct SnapCarousel: View {
                                     .font(Font.custom("SpoqaHanSans-Regular", size: 10))
                                 }
                                 //MARK: -하드코딩
-                                if((item as BeaconInfo).index < 4){
+                                if((item as BeaconInfo).index < self.settings.tourVisitBeaconIndex + 1){
                                     Text("Clear")
                                         .font(.headline)
                                         .padding()
@@ -54,7 +54,7 @@ struct SnapCarousel: View {
                                     ).padding(24)
                                         .rotationEffect(Angle.degrees(45))
                                     .offset(x: 80, y: -15)
-                                }else if((item as BeaconInfo).index == 2){
+                                }else if((item as BeaconInfo).index == self.settings.tourVisitBeaconIndex + 1){
                                     Text("진행중")
                                         .font(.headline)
                                         .padding()

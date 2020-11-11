@@ -14,12 +14,12 @@ struct HomeView:View{
         TabView {
             Tab1MainView()
                 .tabItem {
-                    Image(systemName: "phone.fill")
+                    Image(systemName: "house.fill")
                     Text("캠퍼스 투어")
             }
             Tab2MainView()
                 .tabItem {
-                    Image(systemName: "tv.fill")
+                    Image(systemName: "car.fill")
                     Text("투어 명소")
             }
             Tab3MainView()

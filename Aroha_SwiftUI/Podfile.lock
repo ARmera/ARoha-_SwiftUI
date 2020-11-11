@@ -4,6 +4,36 @@ PODS:
   - CocoaLumberjack/Core (3.6.2)
   - CocoaLumberjack/Swift (3.6.2):
     - CocoaLumberjack/Core
+  - KakaoSDK (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+    - KakaoSDKLink (= 2.0.4)
+    - KakaoSDKNavi (= 2.0.4)
+    - KakaoSDKStory (= 2.0.4)
+    - KakaoSDKTalk (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+    - KakaoSDKUser (= 2.0.4)
+  - KakaoSDKAuth (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKCommon (2.0.4):
+    - Alamofire (~> 5.1)
+  - KakaoSDKLink (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+  - KakaoSDKNavi (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKStory (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKTalk (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
+    - KakaoSDKTemplate (= 2.0.4)
+  - KakaoSDKTemplate (2.0.4):
+    - KakaoSDKCommon (= 2.0.4)
+  - KakaoSDKUser (2.0.4):
+    - KakaoSDKAuth (= 2.0.4)
+    - KakaoSDKCommon (= 2.0.4)
   - Mapbox-iOS-SDK (5.9.0):
     - MapboxMobileEvents (= 0.10.2)
   - MapboxMobileEvents (0.10.2)
@@ -12,6 +42,7 @@ DEPENDENCIES:
   - Alamofire
   - ARCL
   - CocoaLumberjack/Swift
+  - KakaoSDK
   - Mapbox-iOS-SDK (~> 5.9.0)
 
 SPEC REPOS:
@@ -19,6 +50,15 @@ SPEC REPOS:
     - Alamofire
     - ARCL
     - CocoaLumberjack
+    - KakaoSDK
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKNavi
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
     - Mapbox-iOS-SDK
     - MapboxMobileEvents
 
@@ -26,9 +66,18 @@ SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   ARCL: db48b6927d6f3f49f29568295ed91c94ab8d4aab
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
+  KakaoSDK: 9e2d0ddb9828e7e68cdc45cb756d4c649c65b1ba
+  KakaoSDKAuth: 3a88e4a110243f8c6b9948c5ec85670c7acaebf6
+  KakaoSDKCommon: 070472d0638ea6b28684a23c195e47015349e51b
+  KakaoSDKLink: a90a919c4b00dc85bbf21d91842961c105317317
+  KakaoSDKNavi: 698659afffcd6d069febe0d1eab7a2dc524697f5
+  KakaoSDKStory: da6ee55062acc3bd667315773671e55c85b5ca56
+  KakaoSDKTalk: 8cf6299b0eea7cf3139ab0f62b415fd054f83a29
+  KakaoSDKTemplate: 330007aea0b46de1ed93e4cbddc7b4c3b59bdc25
+  KakaoSDKUser: 7951e09f9e6de3908ae2d7f8486290c8607c217a
   Mapbox-iOS-SDK: a5915700ec84bc1a7f8b3e746d474789e35b7956
   MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
 
-PODFILE CHECKSUM: f1128c2d6db5bdd5f9947ebf4da7128b48cabcfb
+PODFILE CHECKSUM: ec3c935dffba616aa2445ba74b2c0eb146ea8bc3
 
 COCOAPODS: 1.9.3
