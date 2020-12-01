@@ -6,12 +6,41 @@
 ![Pod License](https://img.shields.io/badge/License-MIT-blue)
 ![Swift Version](https://img.shields.io/badge/Swift-5.1-blueviolet)
 
-## Project Goal
+## 프로젝트 목표
 
 #### 증강현실 기술을 활용하여 사용자에게 다양한 시각적인 정보를 제공하는 캠퍼스 탐방 및 스탬프 투어 어플리케이션 개발한다
 
+## 개발 환경
+- macOS Catalina 10.15.7
+- Xcode 12.0.1
+- iOS 14.0
 
-## Development setup
+## 사용한 프레임워크
+- SwiftUI
+- Combine
+
+## 설치 및 사용법
+- Cocoapod이 설치 되어 있지 않다면
+```
+# gem을 이용한 cocoapod 설치
+$ sudo gem install cocoapods
+```
+- Cocoapod이 설치 되어 있을 경우
+```
+# Github 저장소에서 로컬에 소스코드 내려받기
+$ git clone https://github.com/KimSeongHeon/11Street-Assignment
+
+# 내려받은 소스코드가 담긴 폴더로 이동
+$ cd 11Street-Assignment
+
+# cocoapod을 이용한 의존성 라이브러리 추가
+$ pod install
+
+# xcworkspace open 후 build
+$ open 11Street-Assignment.xcworkspace
+```
+
+## dependency 
 
 #### CocoaPods 1.9.3
 
@@ -25,42 +54,3 @@ target 'SampleTarget' do
   pod 'AlamoFire'
 end
 ```
-
-## Release History
-
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
-* 0.0.1
-    * Work in progress
-
-## Meta
-
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
-
-[https://github.com/yourname/github-link](https://github.com/dbader/)
-
-## Contributing
-
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
-
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
