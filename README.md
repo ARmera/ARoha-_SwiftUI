@@ -28,16 +28,16 @@ $ sudo gem install cocoapods
 - Cocoapod이 설치 되어 있을 경우
 ```
 # Github 저장소에서 로컬에 소스코드 내려받기
-$ git clone https://github.com/KimSeongHeon/11Street-Assignment
+$ git clone https://github.com/ARmera/ARoha_SwiftUI
 
 # 내려받은 소스코드가 담긴 폴더로 이동
-$ cd 11Street-Assignment
+$ cd ARoha_SwiftUI
 
 # cocoapod을 이용한 의존성 라이브러리 추가
 $ pod install
 
 # xcworkspace open 후 build
-$ open 11Street-Assignment.xcworkspace
+$ open Aroha_SwiftUI.xcworkspace
 ```
 
 ## dependency 
