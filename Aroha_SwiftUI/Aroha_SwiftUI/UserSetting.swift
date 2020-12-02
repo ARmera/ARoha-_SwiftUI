@@ -57,7 +57,7 @@ class UserSettings:ObservableObject{
     //RouteAnnotations : 현재 선택된 route의 annotation
     @Published var RouteAnnotations:[CustomPointAnnotation] = [CustomPointAnnotation]()
     //UserGetStamp : 현재 선택된 User가 얻은 스탬프 목록
-    @Published var UserGetStamp:UsersStampInfo = UsersStampInfo(stamp_status: [24,9,4], stamp_achievement: 0)
+    @Published var UserGetStamp:UsersStampInfo = UsersStampInfo(stamp_status: [], stamp_achievement: 0)
     //UserSelectTourRoute : 유저가 투어를 위해 선택한 루트
     @Published var UserSelectTourRoute:RouteInfo? = nil
     //currentBeaconList : 현재 선택한 루트의 모든 비콘 리스트

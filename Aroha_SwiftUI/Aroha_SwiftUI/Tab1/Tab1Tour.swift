@@ -156,6 +156,8 @@ struct Tab1TourView : View{
                     print("업로드 이미지 : \(response.result)")
                     if response.result != "FALSE"{
                         self.showStamp = Int(atoi(response.result))
+                        self.settings.UserGetStamp.stamp_status.append(Int(atoi(response.result)))
+                        UserDefaults.standard.setValue(self.settings.UserGetStamp, forKey: "UserGetStamp")
                     }else{
                         self.showStamp = 0
                     }

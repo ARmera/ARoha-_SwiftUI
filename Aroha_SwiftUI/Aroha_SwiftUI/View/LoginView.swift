@@ -30,6 +30,7 @@ struct LoginView: View {
                     self.LoadAllWeather()
                     self.width = screenWidth - 50;
                     self.height = 200;
+                    self.setting.UserGetStamp = UserDefaults.standard.array(forKey: "UserGetStamp")
                 }
                 Button(action: {
                     kakaocheck()
