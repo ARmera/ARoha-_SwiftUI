@@ -13,7 +13,7 @@
 ## 개발 환경
 - macOS Catalina 10.15.7
 - Xcode 12.0.1
-- iOS 14.0
+- iOS 13.0+
 
 ## 사용한 프레임워크
 - SwiftUI
